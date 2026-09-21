@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Elkhoi Home &amp; Property Services — Your Property. Our Priority.</title>
+<meta content="Elkhoi Home &amp; Property Services connects Zambian homes, offices and properties with reliable maintenance, cleaning, laundry and property management services — all in one place." name="description"/>
+<link href="assets/elkhoi-logo.png" rel="icon" type="image/png"/>
+<!--
+  ============================================================
+  ONECALL WEBSITE — v1 (MVP)
+  ============================================================
+  HOW THIS FILE IS ORGANIZED (so it's easy to edit later):
+  1. <style>.laundry-routes-section .route-box{background:var(--navy);border-radius:14px;padding:34px;color:var(--white)}
+.route-home{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:1.05rem;margin-bottom:22px}.route-home span:last-child{width:100%;margin-left:20px;color:rgba(255,255,255,.78);font-size:0.95rem}
+.route-dot{width:10px;height:10px;border-radius:50%;display:inline-block;flex:0 0 10px}.home-dot{background:var(--teal)}.south{background:#35a853}.southwest{background:#2878d8}.central{background:#7b4fc4}.east{background:#e6c400}.northeast{background:#e53935}
+.route-list{display:grid;grid-template-columns:1fr;gap:13px}.route-day{display:flex;align-items:flex-start;gap:12px;padding:13px 0;border-top:1px solid rgba(255,255,255,.13)}.route-day strong{font-family:var(--font-heading);font-size:0.97rem}.route-day p{margin-top:3px;color:rgba(255,255,255,.8);font-size:0.95rem}
+.route-note{margin-top:18px;color:var(--teal);font-size:0.91rem;font-weight:600}.route-details{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px;padding-top:24px;border-top:1px solid rgba(255,255,255,.15)}.route-details>div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:18px}.route-details h3{color:var(--white);font-size:1.05rem;margin-bottom:10px}.route-details p{color:rgba(255,255,255,.82);font-size:0.91rem;margin-top:6px}
+.payment-terms{margin-top:18px;padding:16px 18px;border:1px solid var(--grey-border);border-radius:10px;background:var(--grey-light)}.payment-terms strong{display:block;color:var(--navy);font-family:var(--font-heading);margin-bottom:8px}.payment-terms p{color:var(--ink-soft);font-size:0.91rem;margin-top:7px}
+.estimator-disclaimer{font-size:0.83rem;color:rgba(255,255,255,.7);margin-top:5px}@media(max-width:760px){.route-details{grid-template-columns:1fr}.route-home span:last-child{margin-left:0}}
+
+ block — all design tokens (colors, fonts, spacing) live at
+     the top as CSS variables in :root. Change a value there and it
+     updates everywhere.
+  2. Sections are ordered top to bottom exactly as they appear on the
+     page and are labeled with a section heading comment.
+  3. Each service is one repeatable "card" block — copy/paste a card
+     to add a 5th service later.
+  4. Service icons are full-color PNG images (assets/icon-cleaning.png,
+     icon-maintenance.png, icon-laundry.png, icon-property.png). Replace
+     any of those files to swap an icon — same filename, no code changes
+     needed. The .service-icon box has a light grey backdrop sized for
+     icons that already include their own colors/background.
+  5. LOGO: your real logo is wired in from the /assets folder —
+     elkhoi-logo.png (used in the nav, footer, and browser tab
+     favicon). Keep it in an /assets folder next to this HTML file,
+     or update the src="assets/..." paths if you move it.
+  6. COLORS: matched to your logo — navy (--navy) and orange (--teal,
+     kept this variable name so the rest of the CSS below doesn't
+     need renaming) are both set in :root. Adjust the hex values
+     there if you want an exact pixel-match to the PNG.
+  7. CONTACT FORM: connected to Formspree (form action points to
+     https://formspree.io/f/xjyvlggn). Submissions are emailed to
+     whichever address is registered on that Formspree account. To
+     change where submissions go, update the email in the Formspree
+     dashboard — no code changes needed here.
+  8. HERO BACKGROUND: uses a real photo (assets/hero-bg.jpg) with a navy
+     gradient overlay so the white headline text stays readable. To
+     swap it, replace that file with another landscape-ish photo — no
+     code changes needed.
+  9. ONECALL AT WORK SHOWCASE: a full-width auto-cycling slideshow
+     right after Services — each of the 4 service photos slowly zooms
+     in, crossfades to the next, and shows the service name on top.
+     Dots in the bottom-right let visitors jump to a slide directly;
+     hovering pauses the auto-play. To swap a photo, replace the file
+     in /assets (work-maintenance.jpg, work-cleaning.jpg,
+     work-laundry.jpg, work-property.jpg) — no code changes needed.
+     To add a 5th slide: copy one .showcase-slide block and its
+     matching .showcase-dot button (search "showcase-dot" in the
+     HTML), then the script at the bottom of the page picks it up
+     automatically.
+  ============================================================
+-->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    /* ---- COLOR TOKENS (matched to the Elkhoi logo) ---- */
+    --navy:#0D2A47;        /* primary brand color — from logo house/text */
+    --navy-deep:#081A2E;   /* darker navy for hover/footer */
+    --teal:#F4791E;        /* brand orange — from logo roof/phone, used for CTAs/highlights */
+    --teal-deep:#D9650E;
+    --white:#FFFFFF;
+    --grey-light:#F4F6F7;  /* section backgrounds */
+    --grey-border:#E3E7E9;
+    --ink:#1D2528;         /* body text */
+    --ink-soft:#5C6A70;    /* secondary text */
+
+    /* ---- TYPE TOKENS ---- */
+    --font-heading:'Sora', sans-serif;
+    --font-body:'Inter', sans-serif;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--font-body);
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%; display:block;}
+  h1,h2,h3{font-family:var(--font-heading); color:var(--navy); font-weight:700; line-height:1.2;}
+  a{color:inherit;}
+  .wrap{max-width:1140px; margin:0 auto; padding:0 24px;}
+  section{padding:80px 0;}
+  .eyebrow{
+    font-family:var(--font-heading); font-size:0.83rem; font-weight:600;
+    letter-spacing:0.14em; text-transform:uppercase; color:var(--teal-deep);
+    margin-bottom:14px;
+  }
+  .section-head{max-width:600px; margin:0 auto 48px; text-align:center;}
+  .section-head h2{font-size:clamp(1.65rem,3.2vw,2.25rem); margin-bottom:12px;}
+  .section-head p{color:var(--ink-soft); font-size:1.07rem;}
+
+  /* Buttons */
+  .btn{
+    display:inline-block; font-family:var(--font-heading); font-weight:600;
+    font-size:1rem; padding:14px 28px; border-radius:6px; text-decoration:none;
+    transition:background .18s ease, transform .18s ease, color .18s ease;
+    border:2px solid transparent; cursor:pointer;
+  }
+  .btn-primary{background:var(--teal); color:var(--white);}
+  .btn-primary:hover{background:var(--teal-deep); transform:translateY(-1px);}
+  .btn-outline{border-color:var(--white); color:var(--white);}
+  .btn-outline:hover{background:rgba(255,255,255,0.12);}
+  .btn-outline-navy{border-color:var(--navy); color:var(--navy);}
+  .btn-outline-navy:hover{background:var(--navy); color:var(--white);}
+  .btn-block{width:100%; text-align:center; border:none;}
+
+  /* ============ NAVIGATION ============ */
+  header{
+    position:sticky; top:0; z-index:100;
+    background:var(--white);
+    border-bottom:1px solid var(--grey-border);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 24px; max-width:1140px; margin:0 auto;
+  }
+  .logo-placeholder{
+    display:flex; align-items:center; gap:10px; text-decoration:none;
+  }
+  .nav-logo-img{height:42px; width:auto;}
+  .logo-mark{
+    width:38px; height:38px; border-radius:8px; background:var(--navy);
+    color:var(--white); font-family:var(--font-heading); font-weight:700;
+    display:flex; align-items:center; justify-content:center; font-size:1.05rem;
+  }
+  .logo-text{font-family:var(--font-heading); font-weight:700; font-size:1.3rem; color:var(--navy);}
+  .nav-links{display:flex; align-items:center; gap:32px; list-style:none;}
+  .nav-links a{
+    text-decoration:none; color:var(--ink); font-weight:500; font-size:1rem;
+    transition:color .15s;
+  }
+  .nav-links a:hover{color:var(--teal-deep);}
+  .nav-right{display:flex; align-items:center; gap:20px;}
+  .hamburger{display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:6px;}
+  .hamburger span{width:24px; height:2px; background:var(--navy); display:block;}
+
+  @media (max-width:860px){
+    .nav-links{
+      position:absolute; top:100%; left:0; right:0; background:var(--white);
+      flex-direction:column; align-items:flex-start; gap:0;
+      border-bottom:1px solid var(--grey-border);
+      max-height:0; overflow:hidden; transition:max-height .25s ease;
+    }
+    .nav-links.open{max-height:400px;}
+    .nav-links li{width:100%;}
+    .nav-links a{display:block; padding:16px 24px; width:100%; border-top:1px solid var(--grey-border);}
+    .nav-right .btn{display:none;}
+    .hamburger{display:flex;}
+  }
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;
+    background:
+      linear-gradient(160deg, rgba(13,42,71,0.90) 0%, rgba(13,42,71,0.80) 55%, rgba(13,42,71,0.72) 100%),
+      url('assets/hero-bg.jpg');
+    background-size:cover;
+    background-position:center 55%;
+    padding:110px 0 80px;
+    overflow:hidden;
+  }
+  .hero-inner{max-width:680px; margin:0 auto; text-align:center; position:relative; z-index:1;}
+  .hero h1{font-size:clamp(2.15rem,5vw,3.45rem); margin-bottom:18px; color:var(--white);}
+  .hero h1 .accent{color:var(--teal);}
+  .hero p{color:rgba(255,255,255,0.86); font-size:1.15rem; max-width:520px; margin:0 auto 32px;}
+  .hero-tagline{
+    font-family:var(--font-heading); font-weight:600; font-size:1.2rem;
+    color:var(--teal); letter-spacing:0.02em; margin:0 auto 14px !important;
+    max-width:none !important;
+  }
+  .hero-ctas{display:flex; gap:16px; justify-content:center; flex-wrap:wrap;}
+  .hero .btn-outline-navy{border-color:var(--white); color:var(--white);}
+  .hero .btn-outline-navy:hover{background:var(--white); color:var(--navy);}
+
+  /* ---- WhatsApp buttons (uses brand orange, not WhatsApp's own green,
+     to stay consistent with the Elkhoi palette) ---- */
+  .btn-whatsapp{
+    background:var(--teal); color:var(--white);
+    display:inline-flex; align-items:center; gap:9px;
+  }
+  .btn-whatsapp:hover{background:var(--teal-deep); transform:translateY(-1px);}
+  .btn-whatsapp svg{width:18px; height:18px; fill:currentColor; flex-shrink:0;}
+
+  .whatsapp-float{
+    position:fixed; right:20px; bottom:20px; z-index:200;
+    width:58px; height:58px; border-radius:50%;
+    background:var(--teal); color:var(--white);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 8px 22px rgba(0,0,0,0.28);
+    text-decoration:none; transition:transform .2s, background .2s;
+  }
+  .whatsapp-float:hover{background:var(--teal-deep); transform:scale(1.06);}
+  .whatsapp-float svg{width:28px; height:28px; fill:var(--white);}
+
+  .top-contact-bar{
+    background:var(--navy-deep); padding:8px 0;
+  }
+  .top-contact-bar .wrap{
+    display:flex; justify-content:flex-end; gap:22px; flex-wrap:wrap;
+  }
+  .top-contact-bar a{
+    color:rgba(255,255,255,0.85); text-decoration:none; font-size:0.87rem;
+    display:flex; align-items:center; gap:6px;
+  }
+  .top-contact-bar a:hover{color:var(--white);}
+  .top-contact-bar svg{width:14px; height:14px; fill:currentColor;}
+  @media (max-width:640px){
+    .top-contact-bar .wrap{justify-content:center; gap:16px;}
+  }
+
+  .hero-tag-row{
+    display:flex; justify-content:center; gap:14px; flex-wrap:wrap;
+    margin-top:40px;
+  }
+  .hero-tag-row span{
+    display:flex; align-items:center; gap:7px;
+    font-family:var(--font-heading); font-size:0.87rem; font-weight:500;
+    color:var(--white); background:rgba(255,255,255,0.12);
+    border:1px solid rgba(255,255,255,0.22); border-radius:30px;
+    padding:8px 16px; backdrop-filter:blur(3px);
+  }
+  .hero-tag-row i{width:6px; height:6px; border-radius:50%; background:var(--teal); display:inline-block;}
+
+  /* ============ ONECALL AT WORK (auto-cycling photo showcase) ============ */
+  .work-showcase{background:var(--navy); padding:56px 0; overflow:hidden;}
+  .filmstrip-head{max-width:1140px; margin:0 auto 28px; padding:0 24px;}
+  .filmstrip-head .eyebrow{color:var(--teal); text-align:center; justify-content:center;}
+  .filmstrip-head h2{color:var(--white); text-align:center; font-size:clamp(1.65rem,3.5vw,2.35rem);}
+
+  /* Continuously auto-scrolling strip — no buttons, nothing to click.
+     The track holds the 4 photos TWICE back-to-back; animating it left
+     by exactly 50% and looping creates a seamless infinite scroll. */
+  .filmstrip-viewport{width:100%; overflow:hidden;}
+  .filmstrip-track{
+    display:flex; width:max-content;
+    animation:filmstrip-scroll 28s linear infinite;
+  }
+  .filmstrip-track:hover{animation-play-state:paused;}
+  @keyframes filmstrip-scroll{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+  .filmstrip-card{
+    position:relative; flex:0 0 auto;
+    width:420px; height:500px; margin-right:24px;
+    border-radius:12px; overflow:hidden;
+  }
+  .filmstrip-card img{width:100%; height:100%; object-fit:cover; display:block;}
+  .filmstrip-card-overlay{
+    position:absolute; inset:0;
+    background:linear-gradient(0deg, rgba(13,42,71,0.88) 0%, rgba(13,42,71,0) 55%);
+  }
+  .filmstrip-card-label{
+    position:absolute; left:0; right:0; bottom:0; padding:22px;
+  }
+  .filmstrip-card-label span{
+    font-family:var(--font-heading); color:var(--white); font-weight:600; font-size:1.2rem;
+  }
+
+  @media (max-width:640px){
+    .filmstrip-card{width:300px; height:380px;}
+    .filmstrip-track{animation-duration:20s;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .filmstrip-track{animation:none;}
+  }
+
+  /* ============ SERVICES ============ */
+  .services-grid{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:24px;
+  }
+  .service-card{
+    background:var(--navy); border:1px solid var(--navy); border-radius:12px;
+    padding:32px 28px; transition:box-shadow .2s, transform .2s, border-color .2s;
+    display:flex; flex-direction:column;
+  }
+  .service-card:hover{box-shadow:0 12px 32px rgba(13,42,71,0.25); transform:translateY(-3px); border-color:var(--teal);}
+  .service-icon{
+    width:80px; height:80px; border-radius:18px;
+    background:var(--grey-light); border:1px solid var(--grey-border);
+    display:flex; align-items:center; justify-content:center; margin-bottom:22px;
+    padding:12px;
+  }
+  .service-icon img{width:100%; height:100%; object-fit:contain;}
+  .service-card h3{font-size:1.2rem; margin-bottom:8px; color:var(--white);}
+  .service-card .service-desc{color:rgba(255,255,255,0.75); font-size:0.99rem; margin-bottom:18px;}
+  .service-list{
+    list-style:none; margin-bottom:22px; flex-grow:1;
+  }
+  .service-list li{
+    display:flex; align-items:flex-start; gap:8px;
+    font-size:0.94rem; color:rgba(255,255,255,0.9); padding:5px 0;
+  }
+  .service-list li::before{
+    content:""; width:6px; height:6px; border-radius:50%; background:var(--teal);
+    margin-top:8px; flex-shrink:0;
+  }
+  .service-list-2col{
+    display:grid; grid-template-columns:1fr 1fr; column-gap:12px; row-gap:0;
+  }
+  .service-list li sup{color:rgba(255,255,255,0.6); font-size:0.7em;}
+  .service-card .btn-outline-navy{border-color:var(--white); color:var(--white);}
+  .service-card .btn-outline-navy:hover{background:var(--white); color:var(--navy);}
+  .service-footnote{
+    font-size:0.83rem; color:var(--ink-soft); text-align:center; margin-top:18px;
+  }
+  .service-card .btn{font-size:0.9rem; padding:10px 18px; align-self:flex-start;}
+  .maintenance-details{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:0 0 18px;}
+  .maintenance-details div{background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:8px; padding:11px 12px;}
+  .maintenance-details strong{display:block; color:var(--white); font-family:var(--font-heading); font-size:0.83rem; margin-bottom:4px;}
+  .maintenance-details span{display:block; color:rgba(255,255,255,0.70); font-size:0.77rem; line-height:1.45;}
+
+
+  /* ============ HOW IT WORKS ============ */
+  .steps-grid{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:32px;
+  }
+  .step{text-align:center;}
+  .step-num{
+    width:44px; height:44px; border-radius:50%; background:var(--navy); color:var(--white);
+    font-family:var(--font-heading); font-weight:700; font-size:1.1rem;
+    display:flex; align-items:center; justify-content:center; margin:0 auto 18px;
+  }
+  .step h3{font-size:1.1rem; margin-bottom:8px;}
+  .step p{color:var(--ink-soft); font-size:0.97rem;}
+
+  /* ============ ABOUT ============ */
+  .about{background:var(--grey-light);}
+  .about-inner{max-width:700px; margin:0 auto; text-align:center;}
+  .about p{color:var(--ink-soft); font-size:1.07rem; margin-bottom:16px;}
+
+  /* ============ WHY CHOOSE ============ */
+  .why-grid{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:28px;
+  }
+  .why-item{display:flex; gap:14px; align-items:flex-start;}
+  .why-icon{
+    width:34px; height:34px; flex-shrink:0; border-radius:50%;
+    background:rgba(30,127,121,0.1); display:flex; align-items:center; justify-content:center;
+  }
+  .why-icon svg{width:18px; height:18px; stroke:var(--teal-deep); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;}
+  .why-item h3{font-size:1.05rem; margin-bottom:6px;}
+  .why-item p{color:var(--ink-soft); font-size:0.95rem;}
+
+  /* ============ CONTACT ============ */
+  .contact{background:var(--navy); color:var(--white);}
+  .contact .section-head h2{color:var(--white);}
+  .contact .section-head p{color:rgba(255,255,255,0.72);}
+  .contact-grid{
+    display:grid; grid-template-columns:1fr 1.3fr; gap:48px;
+    align-items:start;
+  }
+  .contact-info-item{margin-bottom:24px;}
+  .contact-info-item .label{
+    font-family:var(--font-heading); font-size:0.83rem; font-weight:600;
+    letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.55);
+    margin-bottom:6px;
+  }
+  .contact-info-item a{
+    color:var(--white); text-decoration:none; font-size:1.15rem; font-weight:500;
+  }
+  .contact-info-item a:hover{color:var(--teal);}
+  .contact-form{
+    background:#EAF2F7; border-radius:10px; padding:32px; color:var(--ink);
+  }
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;}
+  .form-group{margin-bottom:16px; display:flex; flex-direction:column; gap:6px;}
+  .form-group label{font-size:0.9rem; font-weight:500; color:#123B5D;}
+  .form-group input, .form-group select, .form-group textarea{
+    padding:12px 14px; border:1px solid var(--grey-border); border-radius:6px;
+    font-family:var(--font-body); font-size:1rem; color:var(--ink);
+  }
+  .form-group textarea{resize:vertical; min-height:100px;}
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus{
+    outline:2px solid var(--teal); outline-offset:1px; border-color:var(--teal);
+  }
+
+  @media (max-width:760px){
+    .contact-grid{grid-template-columns:1fr;}
+    .form-row{grid-template-columns:1fr;}
+  }
+
+  /* ============ FOOTER ============ */
+  footer{background:var(--navy-deep); color:rgba(255,255,255,0.8); padding:56px 0 28px;}
+  .footer-grid{
+    display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:40px; margin-bottom:40px;
+  }
+  .footer-logo{display:flex; align-items:center; gap:10px; margin-bottom:14px;}
+  .footer-logo-badge{
+    width:40px; height:40px; border-radius:8px; background:var(--white);
+    display:flex; align-items:center; justify-content:center; padding:6px; flex-shrink:0;
+  }
+  .footer-logo-icon{width:100%; height:100%; object-fit:contain;}
+  .footer-col h4{
+    font-family:var(--font-heading); color:var(--white); font-size:0.95rem;
+    letter-spacing:0.06em; text-transform:uppercase; margin-bottom:16px;
+  }
+  .footer-col ul{list-style:none;}
+  .footer-col li{margin-bottom:10px;}
+  .footer-col a{color:rgba(255,255,255,0.72); text-decoration:none; font-size:0.97rem;}
+  .footer-col a:hover{color:var(--teal);}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.12); padding-top:24px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    font-size:0.9rem; color:rgba(255,255,255,0.55);
+  }
+
+  @media (max-width:760px){
+    .footer-grid{grid-template-columns:1fr; gap:32px;}
+  }
+
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:2px solid var(--teal); outline-offset:2px;
+  }
+  @media (prefers-reduced-motion: reduce){ *{transition:none !important;} }
+  input[type=file]{padding:10px; background:var(--grey-light);}
+  input[type=file]{padding:10px; background:var(--grey-light);}
+  .home-form-success{margin-top:18px; padding:24px; background:var(--grey-light); border:1px solid var(--grey-border); border-radius:10px; text-align:center;}
+  .home-form-success h3{margin-bottom:8px;}
+  .home-form-error{margin-top:14px; padding:12px 14px; background:#fff5f5; border:1px solid #f0cccc; border-radius:8px; color:#7a2525; font-size:0.95rem;}
+
+/* CLASSIC ELKHOI VISUAL REFRESH */
+:root{--navy:#123B5D;--navy-deep:#08243B;--teal:#E87822;--teal-deep:#C95D0E;--cream:#FBF8F3;--sage:#EAF1EE;--gold:#C79A52;--ink:#24313A;--ink-soft:#66737A;--white:#fff;--grey-light:#F4F6F5;--grey-border:#DCE3E1;}
+body{background:var(--cream);}
+header{background:rgba(255,255,255,.96);border-bottom:1px solid #E7E0D6;box-shadow:0 4px 18px rgba(8,36,59,.06);}
+.top-contact-bar{background:var(--navy-deep);}
+.hero{background:linear-gradient(120deg,rgba(8,36,59,.96),rgba(18,59,93,.88)),url('assets/hero-bg.jpg') center/cover;position:relative;}
+.hero:after{content:"";position:absolute;inset:auto 0 0;height:6px;background:linear-gradient(90deg,var(--teal),var(--gold),var(--teal));}
+.hero-inner{position:relative;z-index:1;}
+.hero h1{letter-spacing:-.04em;}
+.accent{color:#F4A15D;}
+section{border-top:1px solid rgba(18,59,93,.05);}
+.section-head .eyebrow,.eyebrow{color:var(--teal);font-weight:700;letter-spacing:.16em;text-transform:uppercase;}
+.section-head h2,.work-showcase h2{letter-spacing:-.03em;}
+.service-card{background:var(--white);border:1px solid #E4DDD3;border-radius:18px;box-shadow:0 12px 30px rgba(18,59,93,.08);position:relative;overflow:hidden;}
+.service-card:before{content:"";display:block;height:5px;background:linear-gradient(90deg,var(--teal),var(--gold));position:absolute;left:0;right:0;top:0;}
+.service-icon{background:var(--sage);border-radius:14px;padding:10px;}
+.service-card .btn{margin-top:18px;}
+.service-highlight{display:flex;gap:10px;align-items:flex-start;padding:14px 16px;margin:16px 0;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-left:4px solid var(--teal);border-radius:8px;color:rgba(255,255,255,.9);}
+.service-highlight strong{color:var(--white);white-space:nowrap;}
+.service-highlight span{color:rgba(255,255,255,.9);}
+.maintenance-point-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:20px 0;}
+.maintenance-group{padding:16px;background:#F8FAF9;border:1px solid #DEE7E3;border-radius:12px;}
+.maintenance-group h4{color:var(--navy);margin-bottom:8px;}
+.maintenance-group ul{padding-left:20px;margin:0;}
+.maintenance-group li{margin:4px 0;color:var(--ink-soft);}
+.filmstrip-head{text-align:center;}
+#why-choose{background:linear-gradient(180deg,#fff,var(--sage));}
+.contact{background:var(--navy-deep);}
+footer{background:#061A2A;}
+@media(max-width:760px){.maintenance-point-groups{grid-template-columns:1fr}.service-highlight{display:block}.service-highlight span{display:block;margin-top:4px}}
+
+/* ===== ELKHOI FINAL SERVICE CARD FIX ===== */
+.services-grid{align-items:start !important;}
+.services-grid .service-card{
+  height:auto !important;
+  min-height:0 !important;
+  align-self:start !important;
+  flex:none !important;
+  box-sizing:border-box !important;
+  background:#123B5D !important;
+  border-color:#123B5D !important;
+  color:#FFFFFF !important;
+}
+.services-grid .service-list{
+  flex-grow:0 !important;
+  height:auto !important;
+  min-height:0 !important;
+  margin-top:0 !important;
+  margin-bottom:18px !important;
+}
+.services-grid .service-list-2col{
+  display:grid !important;
+  grid-template-columns:1fr 1fr !important;
+  align-items:start !important;
+  gap:0 12px !important;
+}
+.services-grid .service-list li{
+  color:#FFFFFF !important;
+  padding:4px 0 !important;
+  min-height:0 !important;
+}
+.services-grid .service-highlight{
+  display:flex !important;
+  height:auto !important;
+  min-height:0 !important;
+  margin:12px 0 !important;
+  padding:12px 14px !important;
+  background:rgba(255,255,255,.07) !important;
+  border:1px solid rgba(255,255,255,.16) !important;
+  border-left:4px solid #E87822 !important;
+  color:#FFFFFF !important;
+  overflow:visible !important;
+}
+.services-grid .service-highlight strong{
+  color:#FFFFFF !important;
+  white-space:normal !important;
+  flex:0 0 auto !important;
+}
+.services-grid .service-highlight span{
+  color:#FFFFFF !important;
+  display:block !important;
+  margin:0 !important;
+}
+.services-grid .maintenance-point-groups{align-items:start !important;}
+.services-grid .maintenance-group{
+  background:rgba(255,255,255,.07) !important;
+  border-color:rgba(255,255,255,.16) !important;
+}
+.services-grid .maintenance-group h4,
+.services-grid .maintenance-group li{color:#FFFFFF !important;}
+.services-grid .service-card .btn{margin-top:8px !important;}
+@media(max-width:760px){
+  .services-grid .service-list-2col{grid-template-columns:1fr !important;}
+  .services-grid .service-highlight{display:block !important;}
+  .services-grid .service-highlight span{margin-top:5px !important;}
+}
+
+
+/* ===== ELKHOI SERVICE CARDS — NATURAL HEIGHT FIX ===== */
+.services-grid{
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:24px !important;
+  align-items:start !important;
+  grid-auto-rows:max-content !important;
+}
+.services-grid .service-card{
+  display:block !important;
+  height:auto !important;
+  min-height:0 !important;
+  max-height:none !important;
+  align-self:start !important;
+  flex:none !important;
+  box-sizing:border-box !important;
+  background:#123B5D !important;
+  color:#FFFFFF !important;
+  overflow:visible !important;
+}
+.services-grid .service-card > *{
+  max-height:none !important;
+}
+.services-grid .service-icon{
+  margin-bottom:18px !important;
+}
+.services-grid .service-list{
+  display:grid !important;
+  flex:none !important;
+  flex-grow:0 !important;
+  height:auto !important;
+  min-height:0 !important;
+  margin:0 0 18px 0 !important;
+  padding:0 !important;
+  align-items:start !important;
+}
+.services-grid .service-list-2col{
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important;
+  grid-auto-rows:max-content !important;
+  align-items:start !important;
+  row-gap:6px !important;
+  column-gap:14px !important;
+}
+.services-grid .service-list li{
+  display:flex !important;
+  align-items:flex-start !important;
+  min-height:0 !important;
+  height:auto !important;
+  padding:3px 0 !important;
+  margin:0 !important;
+  color:#FFFFFF !important;
+}
+.services-grid .service-highlight{
+  display:block !important;
+  height:auto !important;
+  min-height:0 !important;
+  margin:12px 0 !important;
+  padding:12px 14px !important;
+  background:rgba(255,255,255,.07) !important;
+  border:1px solid rgba(255,255,255,.16) !important;
+  border-left:4px solid #E87822 !important;
+  border-radius:8px !important;
+  color:#FFFFFF !important;
+  overflow:visible !important;
+}
+.services-grid .service-highlight strong,
+.services-grid .service-highlight span{
+  display:block !important;
+  color:#FFFFFF !important;
+  white-space:normal !important;
+}
+.services-grid .service-highlight span{
+  margin-top:5px !important;
+}
+.services-grid .maintenance-point-groups{
+  display:grid !important;
+  grid-template-columns:1fr 1fr !important;
+  gap:10px !important;
+  align-items:start !important;
+  height:auto !important;
+  min-height:0 !important;
+}
+.services-grid .maintenance-group{
+  height:auto !important;
+  min-height:0 !important;
+  background:rgba(255,255,255,.07) !important;
+  border:1px solid rgba(255,255,255,.16) !important;
+  border-radius:8px !important;
+  padding:11px 12px !important;
+}
+.services-grid .maintenance-group ul{
+  margin:0 !important;
+  padding-left:17px !important;
+}
+.services-grid .maintenance-group li{
+  color:#FFFFFF !important;
+  padding:3px 0 !important;
+}
+.services-grid .maintenance-group h4{
+  color:#FFFFFF !important;
+  margin:0 0 5px !important;
+}
+.services-grid .service-card .btn{
+  display:inline-block !important;
+  margin-top:8px !important;
+}
+@media(max-width:900px){
+  .services-grid{grid-template-columns:1fr 1fr !important;}
+}
+@media(max-width:640px){
+  .services-grid{grid-template-columns:1fr !important;}
+  .services-grid .service-list-2col{grid-template-columns:1fr !important;}
+  .services-grid .maintenance-point-groups{grid-template-columns:1fr !important;}
+}
+
+
+/* APPROVED ELKHOI FORM PALETTE — preserved across all forms */
+.contact-form, .quote-form { background:#EAF2F7 !important; }
+.contact-form label, .quote-form label, .form-group label { color:#123B5D !important; }
+.contact-form input, .contact-form select, .contact-form textarea, .quote-form input, .quote-form select, .quote-form textarea, .form-group input, .form-group select, .form-group textarea { background:#FFFFFF !important; color:#24313A !important; border-color:#C9D8E1 !important; }
+.contact-form input::placeholder, .contact-form textarea::placeholder, .quote-form input::placeholder, .quote-form textarea::placeholder, .form-group input::placeholder, .form-group textarea::placeholder { color:#66737A !important; opacity:1; }
+.contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus, .quote-form input:focus, .quote-form select:focus, .quote-form textarea:focus, .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline-color:#123B5D !important; border-color:#123B5D !important; }
+</style>
+<style>/* Elkhoi form background trial */
+</style>
+<style id="elkhoi-approved-form-colours">
+/* Approved Elkhoi form palette — preserve all other website colours. */
+form {
+  background:#EAF2F7 !important;
+  color:#24313A !important;
+}
+form label, form .optional, form .helper-text, form .form-note, form .form-disclaimer {
+  color:#123B5D !important;
+}
+form input,
+form select,
+form textarea {
+  background:#FFFFFF !important;
+  color:#24313A !important;
+  border:1px solid #C9D8E1 !important;
+}
+form input::placeholder,
+form textarea::placeholder {
+  color:#66737A !important;
+  opacity:1;
+}
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color:#123B5D !important;
+  outline:none;
+  box-shadow:0 0 0 2px rgba(18,59,93,.12) !important;
+}
+form .success-message {
+  color:#24313A;
+}
+</style>
+
+<style id="elkhoi-typography-normalization">
+/* Elkhoi typography normalization: keeps the existing visual hierarchy while making equivalent text consistent. */
+html { font-size: 16px; }
+body { font-size: 1.05rem; }
+.nav-links a { font-size: 1rem !important; }
+.section-head p { font-size: 1.05rem !important; }
+.step p, .why-item p, .why-card p, .business p { font-size: 1rem !important; }
+.service-card p { font-size: 1rem !important; }
+.form-group label, .quote-form label, label { font-size: 0.9rem !important; }
+.form-group input, .form-group select, .form-group textarea, .quote-form input, .quote-form select, .quote-form textarea { font-size: 1rem !important; }
+footer { font-size: 0.9rem !important; }
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .section-head p { font-size: 1.05rem !important; }
+  .step p, .why-item p, .why-card p, .business p, .service-card p { font-size: 1rem !important; }
+}
+</style>
+</head>
+<body>
+<!-- ============ HEADER / NAVIGATION ============ -->
+<div class="top-contact-bar">
+<div class="wrap">
+<a href="tel:+260572313595"><svg viewbox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"></path></svg> +260 572 313 595</a>
+<a href="https://wa.me/message/NRMCE6TWNKXDH1" rel="noopener" target="_blank"><svg viewbox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4C8.6 21.5 10.3 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.7-2.8-1.1-4.6-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.2.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.2.3-.3.5-.2.2-.3.3-.5.5-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.2 2.4 1.5 2.7 1.7.3.2.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.8.9 2.1 1 .3.2.5.2.6.4.1.1.1.7-.1 1.3z"></path></svg> WhatsApp Us</a>
+<a href="mailto:elkhoizm@gmail.com"><svg viewbox="0 0 24 24"><path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6zm2 0l8 6 8-6H4zm16 2.2-8 6-8-6V18h16V8.2z"></path></svg> elkhoizm@gmail.com</a>
+</div>
+</div>
+<header>
+<div class="nav">
+<a class="logo-placeholder" href="#home">
+<!-- Real Elkhoi logo file (has a dark charcoal background baked
+           into the photo, not transparent — will show as a rectangle
+           against the white nav bar until a transparent version exists) -->
+<img alt="Elkhoi Home &amp; Property Services" class="nav-logo-img" src="assets/elkhoi-logo.png"/>
+</a>
+<ul class="nav-links" id="navLinks">
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="laundry.html">Laundry</a></li>
+<li><a href="get-quote.html">Get Quote</a></li>
+<li><a href="contact.html">Contact</a></li><li><a href="policies.html">Policies</a></li>
+
+</ul>
+<div class="nav-right">
+<a class="btn btn-primary" href="get-quote.html">Request a Service</a>
+<button aria-expanded="false" aria-label="Toggle menu" class="hamburger" id="hamburgerBtn">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+</header>
+<!-- ============ HERO SECTION ============ -->
+<section class="hero" id="home">
+<div class="wrap hero-inner">
+<h1>Elkhoi <span class="accent">Home &amp; Property Services</span></h1>
+<p class="hero-tagline">Your Property. Our Priority.</p>
+<p>Cleaning, laundry, maintenance and property care — all through one company.</p>
+<div class="hero-ctas">
+<a class="btn btn-primary" href="get-quote.html">Request a Service</a>
+<a class="btn btn-whatsapp" href="https://wa.me/message/NRMCE6TWNKXDH1" rel="noopener" target="_blank"><svg viewbox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4C8.6 21.5 10.3 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.7-2.8-1.1-4.6-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.2.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.2.3-.3.5-.2.2-.3.3-.5.5-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.2 2.4 1.5 2.7 1.7.3.2.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.8.9 2.1 1 .3.2.5.2.6.4.1.1.1.7-.1 1.3z"></path></svg>WhatsApp Us</a>
+<a class="btn btn-outline-navy" href="contact.html">Contact Us</a>
+</div>
+<div class="hero-tag-row">
+<span><i></i>Maintenance</span>
+<span><i></i>Cleaning</span>
+<span><i></i>Laundry</span>
+<span><i></i>Property</span>
+</div>
+</div>
+</section>
+<!-- ============ SERVICES SECTION ============ -->
+<section id="services">
+<div class="wrap">
+<div class="section-head">
+<p class="eyebrow">What We Do</p>
+<h2>Services</h2>
+<p>Elkhoi manages your maintenance needs from request to completion, using trusted and vetted technical professionals where required.</p>
+</div>
+<div class="services-grid">
+<!-- SERVICE CARD 1: Elkhoi Cleaning -->
+<div class="service-card">
+<div class="service-icon">
+<img alt="Cleaning services icon" src="assets/icon-cleaning.png"/>
+</div>
+<h3>Elkhoi Cleaning</h3>
+<p class="service-desc">Professional cleaning for homes, offices and properties.</p>
+<ul class="service-list service-list-2col">
+<li>Residential cleaning</li>
+<li>Office/commercial cleaning</li>
+<li>Deep cleaning</li>
+<li>Move-in/move-out cleaning</li>
+<li>Post-construction cleaning</li>
+<li>Carpet/upholstery cleaning</li>
+</ul><div class="service-highlight"><strong>Residential Recurring Cleaning</strong><span>Weekly, biweekly and monthly cleaning options are available. Service details and pricing are provided separately when you request a quote.</span></div><div class="service-highlight"><strong>Office Cleaning</strong><span>Daily, weekly and monthly cleaning options are available. Service details and pricing are provided separately when you request a quote.</span></div>
+<div class="payment-terms">
+<strong>Cleaning Payment Terms</strong>
+<p>Once our cleaning team arrives and confirms the agreed scope of work, 50% of the agreed service fee is payable before cleaning begins. The remaining 50% is payable immediately upon completion of the agreed cleaning service.</p>
+<p>If the actual property differs materially from what was described, any price adjustment must be agreed with the customer before additional work begins.</p>
+</div>
+<a class="btn btn-outline-navy" href="get-quote.html">Request Service</a>
+</div>
+<!-- SERVICE CARD 2: Elkhoi Maintenance -->
+<div class="service-card">
+<div class="service-icon">
+<img alt="Maintenance services icon" src="assets/icon-maintenance.png"/>
+</div>
+<h3>Elkhoi Maintenance</h3>
+<p class="service-desc">Keeping your home or office functional and well-maintained.</p>
+<div class="maintenance-point-groups">
+<div class="maintenance-group"><h4>Core Maintenance</h4><ul><li>Plumbing</li><li>Electrical</li><li>Painting</li><li>Carpentry</li><li>Tiling</li><li>General repairs</li></ul></div>
+<div class="maintenance-group"><h4>Solar &amp; Backup Power</h4><ul><li>Solar installation</li><li>Inverter installation</li><li>Battery systems</li><li>Hybrid/off-grid solar</li><li>Backup power</li><li>Solar lighting</li><li>Solar water pumping</li></ul></div>
+<div class="maintenance-group"><h4>Security &amp; Access Systems</h4><ul><li>CCTV</li><li>Electric fencing</li><li>Alarms</li><li>Access control</li><li>Intercoms</li><li>Gate automation</li><li>Security lighting</li></ul></div>
+<div class="maintenance-group"><h4>AC &amp; Refrigeration</h4><ul><li>Domestic AC installation &amp; servicing</li><li>Commercial AC installation &amp; servicing</li><li>Refrigeration</li><li>Cold rooms</li><li>Fridge/freezer repairs</li></ul></div>
+<div class="maintenance-group"><h4>Electrical Testing &amp; Preventive Maintenance</h4><ul><li>Electrical testing</li><li>Preventive maintenance</li><li>Earthing</li><li>Distribution boards</li><li>Rewiring &amp; upgrades</li><li>Lighting</li></ul></div>
+<div class="maintenance-group"><h4>Appliance Repairs</h4><ul><li>Assessment and repair of selected household and business appliances, depending on the equipment and fault.</li></ul></div>
+</div>
+<p class="service-note">Specialised maintenance may be coordinated with appropriate service professionals as needed. Materials, replacement parts and specialised equipment may be charged separately where applicable.</p>
+<a class="btn btn-outline-navy" href="get-quote.html">Request Service</a>
+</div>
+<!-- SERVICE CARD 3: Elkhoi Property Management -->
+<div class="service-card">
+<div class="service-icon">
+<img alt="Property management services icon" src="assets/icon-property.png"/>
+</div>
+<h3>Elkhoi Property Management</h3>
+<p class="service-desc">Property care and oversight to help owners keep properties checked, maintained and in good condition.</p>
+<ul class="service-list service-list-2col">
+<li>Property inspections</li>
+<li>Routine property checks</li>
+<li>Move-in inspections</li>
+<li>Move-out inspections</li>
+<li>Vacant property checks</li>
+<li>Property upkeep</li>
+<li>Maintenance coordination</li>
+<li>Issue reporting</li>
+<li>Cleaning coordination</li>
+<li>Basic property condition reports</li>
+</ul>
+<a class="btn btn-outline-navy" href="get-quote.html">Request Service</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ============ ONECALL AT WORK (auto-scrolling filmstrip) ============ -->
+<!-- Scrolls left on its own, forever, no buttons to click or miss.
+     The track below lists the 4 photos TWICE in a row — that's what
+     makes the loop seamless (when the first set scrolls fully out of
+     view, the identical second set is right behind it, so it looks
+     continuous). To swap a photo, replace the file in /assets
+     (work-maintenance.jpg etc.) — filenames stay the same. To add a
+     5th photo: add ONE new .filmstrip-card in EACH of the two copies
+     below (so it stays duplicated), using the same markup pattern. -->
+<section class="work-showcase">
+<div class="filmstrip-head">
+<p class="eyebrow">Real Work</p>
+<h2>Elkhoi At Work</h2>
+</div>
+<div class="filmstrip-viewport">
+<div class="filmstrip-track">
+<!-- Copy 1 -->
+<div class="filmstrip-card">
+<img alt="Home and office maintenance work" src="assets/work-maintenance.jpg"/>
+<div class="filmstrip-card-overlay"></div>
+<div class="filmstrip-card-label"><span>Maintenance</span></div>
+</div>
+<div class="filmstrip-card">
+<img alt="Professional cleaning service" src="assets/work-cleaning.jpg"/>
+<div class="filmstrip-card-overlay"></div>
+<div class="filmstrip-card-label"><span>Cleaning</span></div>
+</div>
+<div class="filmstrip-card">
+<img alt="Laundry pick-up and delivery" src="assets/work-laundry.jpg"/>
+<div class="filmstrip-card-overlay"></div>
+<div class="filmstrip-card-label"><span>Laundry</span></div>
+</div>
+<div class="filmstrip-card">
+<img alt="Property management" src="assets/work-property.jpg"/>
+<div class="filmstrip-card-overlay"></div>
+<div class="filmstrip-card-label"><span>Property</span></div>
+</div>
+<!-- Copy 2 (identical — required for the seamless loop) -->
+<div class="filmstrip-card">
+<img alt="Home and office maintenance work" src="assets/work-maintenance.jpg"/>
+<div class="filmstrip-card-overlay"></div>
+<div class="filmstrip-card-label"><span>Maintenance</span></div>
+</div>
+<div class="filmstrip-card">
+<img alt="Professional cleaning service" src="assets/work-cleaning.jpg"/>
+<div class="filmstrip-card-overlay"></div>
+<div class="filmstrip-card-label"><span>Cleaning</span></div>
+</div>
+<div class="filmstrip-card">
+<img alt="Laundry pick-up and delivery" src="assets/work-laundry.jpg"/>
+<div class="filmstrip-card-overlay"></div>
+<div class="filmstrip-card-label"><span>Laundry</span></div>
+</div>
+<div class="filmstrip-card">
+<img alt="Property management" src="assets/work-property.jpg"/>
+<div class="filmstrip-card-overlay"></div>
+<div class="filmstrip-card-label"><span>Property</span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- ============ HOW IT WORKS SECTION ============ -->
+<section id="how-it-works" style="background:var(--grey-light);">
+<div class="wrap">
+<div class="section-head">
+<p class="eyebrow">Simple Process</p>
+<h2>How It Works</h2>
+</div>
+<div class="steps-grid">
+<div class="step">
+<div class="step-num">1</div>
+<h3>Request a Service</h3>
+<p>Reach out by WhatsApp, phone, email or the form below with what you need.</p>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<h3>We Confirm</h3>
+<p>We confirm the details, timing and scope with you before anything starts.</p>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<h3>We Provide the Service</h3>
+<p>Elkhoi ensures every service is handled professionally and on schedule.</p>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<h3>You Make Payment</h3>
+<p>Your home, office or property is handled — one call, done.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ============ ABOUT SECTION ============ -->
+<section class="about" id="about">
+<div class="wrap about-inner">
+<p class="eyebrow" style="text-align:center;">About Elkhoi</p>
+<h2 style="margin-bottom:20px;">Built around one simple idea</h2>
+<p>Customers shouldn't have to search for a different person every time they need something done around their home, office or property. Elkhoi brings different property and household solutions together under one brand, so getting reliable help is easier.</p>
+<p>Elkhoi is a Lusaka-based service company building its services step by step around the needs of homes, offices and property owners.</p>
+</div>
+</section>
+<!-- ============ WHY CHOOSE ONECALL SECTION ============ -->
+<section id="why-choose">
+<div class="wrap">
+<div class="section-head">
+<p class="eyebrow">Why Choose Us</p>
+<h2>Why Choose Elkhoi</h2>
+</div>
+<div class="why-grid">
+<div class="why-item">
+<div class="why-icon"><svg viewbox="0 0 24 24"><path d="M12 6v6l4 2"></path><circle cx="12" cy="12" r="9"></circle></svg></div>
+<div><h3>Convenience</h3><p>One number to call instead of searching for different providers.</p></div>
+</div>
+<div class="why-item">
+<div class="why-icon"><svg viewbox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg></div>
+<div><h3>Reliable Service</h3><p>We aim to communicate clearly, confirm what is agreed and follow through on the service requested.</p></div>
+</div>
+<div class="why-item">
+<div class="why-icon"><svg viewbox="0 0 24 24"><rect height="7" width="7" x="4" y="4"></rect><rect height="7" width="7" x="13" y="4"></rect><rect height="7" width="7" x="4" y="13"></rect><rect height="7" width="7" x="13" y="13"></rect></svg></div>
+<div><h3>Multiple Solutions, One Place</h3><p>Maintenance, cleaning, laundry and property support together.</p></div>
+</div>
+<div class="why-item">
+<div class="why-icon"><svg viewbox="0 0 24 24"><path d="M4 4h16v12H8l-4 4z"></path></svg></div>
+<div><h3>Easy Communication</h3><p>Reach us by WhatsApp, phone or email, and get a straightforward response.</p></div>
+</div>
+<div class="why-item">
+<div class="why-icon"><svg viewbox="0 0 24 24"><path d="M12 2l2.4 6.9L21 9l-5.5 4.6L17 21l-5-3.6L7 21l1.5-7.4L3 9l6.6-.1z"></path></svg></div>
+<div><h3>Professional Approach</h3><p>Clear communication and service handled properly, start to finish.</p></div>
+</div>
+<div class="why-item">
+<div class="why-icon"><svg viewbox="0 0 24 24"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 21c0-3.9 3.1-7 7-7s7 3.1 7 7"></path></svg></div>
+<div><h3>Customer-Focused</h3><p>Built around what makes things easier for you.</p></div>
+</div>
+</div>
+</div>
+</section>
+<!-- ============ CONTACT SECTION ============ -->
+<section class="contact" id="contact">
+<div class="wrap">
+<div class="section-head">
+<p class="eyebrow" style="color:var(--teal);">Get In Touch</p>
+<h2>Request a Service</h2>
+<p>Reach out directly, or fill in the form and we'll get back to you.</p>
+</div>
+<div class="contact-grid">
+<div class="contact-info">
+<div class="contact-info-item">
+<div class="label">Phone</div>
+<a href="tel:+260572313595">+260 572 313 595</a>
+</div>
+<div class="contact-info-item">
+<div class="label">WhatsApp</div>
+<a href="https://wa.me/message/NRMCE6TWNKXDH1" rel="noopener" target="_blank">Chat with us instantly</a>
+</div>
+<div class="contact-info-item">
+<div class="label">Email</div>
+<a href="mailto:elkhoizm@gmail.com">elkhoizm@gmail.com</a>
+</div>
+<div class="contact-info-item">
+<div class="label">Serving</div>
+<span style="font-size:1.1rem;">Lusaka, Zambia</span>
+</div>
+<div class="contact-info-item">
+<div class="label">Hours</div>
+<span style="font-size:1.1rem;">Monday – Saturday: 08:30 – 18:30<br/>Serving Lusaka, Zambia</span>
+</div>
+<a class="btn btn-whatsapp" href="https://wa.me/message/NRMCE6TWNKXDH1" rel="noopener" style="margin-top:8px;" target="_blank"><svg viewbox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4C8.6 21.5 10.3 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.7-2.8-1.1-4.6-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.2.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.2.3-.3.5-.2.2-.3.3-.5.5-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.2 2.4 1.5 2.7 1.7.3.2.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.8.9 2.1 1 .3.2.5.2.6.4.1.1.1.7-.1 1.3z"></path></svg>WhatsApp Us</a>
+</div>
+<!--
+        CONTACT FORM — front-end only for now.
+        To make this actually send you emails/messages, sign up for a
+        free form backend such as Formspree (formspree.io) or Getform
+        (getform.io), then paste the endpoint URL they give you into
+        the action="" attribute below.
+      -->
+<form action="https://formspree.io/f/xjyvlggn" class="contact-form" enctype="multipart/form-data" id="home-service-request-form" method="POST">
+<input name="_subject" type="hidden" value="New Elkhoi Service Request"/>
+<div class="form-row">
+<div class="form-group"><label for="name">Full Name</label><input id="name" name="name" required="" type="text"/></div>
+<div class="form-group"><label for="phone">Phone / WhatsApp</label><input id="phone" name="phone" required="" type="tel"/></div>
+</div>
+<div class="form-group"><label for="email">Email <span style="font-weight:400; color:var(--ink-soft);">(Optional)</span></label><input id="email" name="email" type="email"/></div>
+<div class="form-group">
+<label for="service">Service Required</label>
+<select id="service" name="service" required="">
+<option value="">Select a service</option>
+<option value="cleaning">Elkhoi Cleaning</option>
+<option value="maintenance">Elkhoi Maintenance</option>
+<option value="property">Elkhoi Property Management</option>
+</select>
+</div>
+<div class="form-group conditional" hidden="" id="main-cleaning-fields">
+<label for="main-cleaning-service">Cleaning Service</label>
+<select disabled="" id="main-cleaning-service" name="cleaning_service">
+<option value="">Select a cleaning service</option>
+<option>General Cleaning</option><option>Deep Cleaning</option><option>Move-in / Move-out Cleaning</option>
+<option>Post-Construction Cleaning</option><option>Recurring Cleaning</option><option>Office Cleaning</option><option>Cleaning Add-on</option>
+</select>
+</div>
+
+<div class="form-group conditional" hidden="" id="main-maintenance-fields">
+<label for="main-maintenance-category">Maintenance Category</label>
+<select disabled="" id="main-maintenance-category" name="maintenance_category">
+<option value="">Select a category</option>
+<option value="minor">Level 1 — Minor Maintenance</option>
+<option value="technical">Level 2 — Standard Technical Services</option>
+<option value="security">Level 3 — Installations &amp; Security Systems</option>
+<option value="major">Level 4 — Major / Project Work</option>
+</select>
+</div>
+<div class="form-group conditional" hidden="" id="main-maintenance-service-wrap">
+<label for="main-maintenance-service">Maintenance Service</label>
+<select disabled="" id="main-maintenance-service" name="maintenance_service"><option value="">Select a maintenance service</option></select>
+</div>
+<div class="form-group conditional" hidden="" id="main-property-fields">
+<label for="main-property-service">Property Management Service</label>
+<select disabled="" id="main-property-service" name="property_service">
+<option value="">Select a property service</option>
+<option>Property Inspection</option><option>Routine Property Check</option><option>Move-in Inspection</option>
+<option>Move-out Inspection</option><option>Vacant Property Check</option><option>Property Upkeep Visit</option>
+<option>Maintenance Coordination</option><option>Property Care Package</option>
+</select>
+</div>
+<div class="form-row">
+<div class="form-group"><label for="location">Location / Area</label><input id="location" name="location" placeholder="e.g. Chalala, Northmead, Woodlands" required="" type="text"/></div>
+<div class="form-group"><label for="property-type">Property Type <span style="font-weight:400; color:var(--ink-soft);">(Optional)</span></label><input id="property-type" name="property_type" placeholder="House, flat, office, etc." type="text"/></div>
+</div>
+<div class="form-row conditional" hidden="" id="main-cleaning-size-fields">
+<div class="form-group"><label for="main-rooms">Bedrooms / Rooms <span style="font-weight:400; color:var(--ink-soft);">(Optional)</span></label><input disabled="" id="main-rooms" name="rooms" type="text"/></div>
+<div class="form-group"><label for="main-bathrooms">Bathrooms <span style="font-weight:400; color:var(--ink-soft);">(Optional)</span></label><input disabled="" id="main-bathrooms" name="bathrooms" type="text"/></div>
+</div>
+<div class="form-group conditional" hidden="" id="main-condition-fields">
+<label for="main-condition">Property Condition <span style="font-weight:400; color:var(--ink-soft);">(Optional)</span></label>
+<select disabled="" id="main-condition" name="property_condition"><option value="">Select if known</option><option>Light / Well Maintained</option><option>Moderate</option><option>Heavy dirt / grease / mould</option><option>Post-construction / debris</option><option>Not sure</option></select>
+</div>
+
+<div class="form-group conditional" hidden="" id="main-maintenance-detail-fields">
+<label for="main-quantity">Units / Quantity <span style="font-weight:400; color:var(--ink-soft);">(Optional)</span></label>
+<input disabled="" id="main-quantity" name="units_quantity" placeholder="e.g. 2 AC units, 4 CCTV points" type="text"/>
+</div>
+<div class="form-group conditional" hidden="" id="main-property-detail-fields">
+<label for="main-frequency">Frequency / Property Details <span style="font-weight:400; color:var(--ink-soft);">(Optional)</span></label>
+<input disabled="" id="main-frequency" name="property_frequency_details" placeholder="e.g. Monthly, 3 properties" type="text"/>
+</div>
+<div class="form-row">
+<div class="form-group"><label for="date">Preferred Date <span style="font-weight:400; color:var(--ink-soft);">(Optional)</span></label><input id="date" name="preferred_date" type="date"/></div>
+<div class="form-group"><label for="time">Preferred Time <span style="font-weight:400; color:var(--ink-soft);">(Optional)</span></label><input id="time" name="preferred_time" type="time"/></div>
+</div>
+<div class="form-group"><label for="message">Additional Requirements <span style="font-weight:400; color:var(--ink-soft);">(Optional)</span></label><textarea id="message" name="message" placeholder="Tell us anything else that may help us understand the job."></textarea></div>
+<div class="form-group"><label for="photo">Photo Upload <span style="font-weight:400; color:var(--ink-soft);">(Optional)</span></label><input accept="image/*" id="photo" name="photo" type="file"/><p style="font-size:0.87rem;color:var(--ink-soft);margin-top:2px;">A photo can help us understand the work required, but it is not necessary.</p></div>
+<button class="btn btn-primary btn-block" type="submit">Request a Service</button>
+<p style="font-size:0.87rem; color:var(--ink-soft); text-align:center; margin-top:10px;">Submitting this form is a service request and does not automatically confirm your booking or final price.</p>
+</form>
+<div class="home-form-success" hidden="" id="home-form-success">
+<h3>Thank you.</h3>
+<p>Your service request has been received. An Elkhoi representative will contact you to confirm the details, availability and final price.</p>
+</div>
+<div class="home-form-error" hidden="" id="home-form-error">
+<p>We couldn't submit the request right now. Please try again or contact us on WhatsApp.</p>
+</div>
+</div>
+</div>
+</section>
+<script>
+(function(){
+  const form=document.getElementById('home-service-request-form');
+  const success=document.getElementById('home-form-success');
+  const error=document.getElementById('home-form-error');
+  const service=document.getElementById('service');
+  if(!form) return;
+
+  const maintenanceServices={
+    minor:[
+      'Minor Plumbing Repairs','Plumbing Call-out / Assessment','Minor Electrical Repairs','Minor Carpentry Repairs','Minor General Repairs','Lighting Installation','Leak Detection & Repair','Water Heater / Geyser Repair & Service'
+    ],
+    technical:[
+      'Assessment / Diagnostic','Domestic AC Servicing','Domestic AC Installation','Commercial AC Servicing','Commercial AC Installation','Cold Room Servicing','Cold Room Repair','Double-Door Fridge Repair','Upright Fridge Repair','Deep Freezer Repair','Electrical Fault Assessment','Electrical Safety Testing','Solar Maintenance — 3kW','Solar Maintenance — 5kW','Solar Maintenance — 8–10kW','Solar Maintenance — 12–16kW','Solar Panel Cleaning'
+    ],
+    security:[
+      'CCTV Systems','Electric Fencing','Alarm Systems','Access Control','Intercom','Gate Automation','Security Lighting','Solar Installation','Inverter Installation','Battery Systems','Hybrid / Off-grid Solar','Backup Power Systems','Solar Lighting','Solar Water Pumping'
+    ],
+    major:[
+      'Major Plumbing Works','Full House Rewiring','Major Electrical Upgrades','Distribution Boards','Earthing','Major Carpentry','Painting Projects','Tiling Projects','Major Renovations','Commercial Refrigeration','Major Cold-Room Work','Large Solar Installations','Large Backup-Power Projects','Complex Security Installations','Major General Repairs'
+    ]
+  };
+
+  const groups={
+    cleaning:['main-cleaning-fields','main-cleaning-size-fields','main-condition-fields'],
+    maintenance:['main-maintenance-fields','main-maintenance-service-wrap','main-maintenance-detail-fields'],
+    property:['main-property-fields','main-property-detail-fields']
+  };
+  function setEnabled(section,on){
+    if(!section) return;
+    section.hidden=!on;
+    section.querySelectorAll('input,select,textarea').forEach(el=>el.disabled=!on);
+  }
+  function clearGroup(key){(groups[key]||[]).forEach(id=>setEnabled(document.getElementById(id),false));}
+  function updateService(){
+    Object.keys(groups).forEach(clearGroup);
+    const key=service.value;
+    (groups[key]||[]).forEach(id=>setEnabled(document.getElementById(id),true));
+    if(key!=='maintenance'){
+      setEnabled(document.getElementById('main-maintenance-service-wrap'),false);
+    }
+  }
+  const cat=document.getElementById('main-maintenance-category');
+  const svc=document.getElementById('main-maintenance-service');
+  cat.addEventListener('change',function(){
+    svc.innerHTML='<option value="">Select a maintenance service</option>';
+    (maintenanceServices[this.value]||[]).forEach(x=>{const o=document.createElement('option');o.textContent=x;svc.appendChild(o);});
+  });
+  service.addEventListener('change',updateService); updateService();
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    const button=form.querySelector('button[type="submit"]');
+    button.disabled=true; button.textContent='Sending…'; error.hidden=true;
+    try{
+      const response=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+      if(!response.ok) throw new Error('Submission failed');
+      form.hidden=true; success.hidden=false;
+    }catch(err){
+      error.hidden=false; button.disabled=false; button.textContent='Request a Service';
+    }
+  });
+})();
+</script>
+<!-- ============ FOOTER ============ -->
+<footer>
+<div class="wrap">
+<div class="footer-grid">
+<div>
+<div class="footer-logo">
+<div style="background:var(--white); border-radius:6px; padding:8px 14px; display:inline-block;">
+<img alt="Elkhoi Home &amp; Property Services" src="assets/elkhoi-logo.png" style="height:44px; width:auto;"/>
+</div>
+</div>
+<p style="max-width:320px; font-size:0.97rem; color:rgba(255,255,255,0.65);">
+          Elkhoi connects Zambian homes, offices and properties with reliable maintenance, cleaning, laundry and property management services — all in one place.
+        </p>
+</div>
+<div class="footer-col">
+<h4>Quick Links</h4>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<ul>
+<li><a href="tel:+260572313595">+260 572 313 595</a></li>
+<li><a href="https://wa.me/message/NRMCE6TWNKXDH1" rel="noopener" target="_blank">WhatsApp Us</a></li>
+<li><a href="mailto:elkhoizm@gmail.com">elkhoizm@gmail.com</a></li>
+<li>Lusaka, Zambia</li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2026 Elkhoi Home &amp; Property Services. All rights reserved. Elkhoi Home &amp; Property Services is the trading name of Elkhoi Services.</span>
+<span style="display:flex; gap:22px; align-items:center;"><a href="contact.html" style="color:inherit; text-decoration:none;">Contact</a><a href="./policies.html" style="color:inherit; text-decoration:none;">Policies</a></span>
+</div>
+</div>
+</footer>
+<script>
+  // Mobile hamburger menu toggle
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const navLinks = document.getElementById('navLinks');
+  hamburgerBtn.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    hamburgerBtn.setAttribute('aria-expanded', isOpen);
+  });
+  // Close menu when a link is clicked (mobile)
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+<a aria-label="Chat with Elkhoi on WhatsApp" class="whatsapp-float" href="https://wa.me/message/NRMCE6TWNKXDH1" rel="noopener" target="_blank">
+<svg viewbox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4C8.6 21.5 10.3 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.7-2.8-1.1-4.6-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.2.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.2.3-.3.5-.2.2-.3.3-.5.5-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.2 2.4 1.5 2.7 1.7.3.2.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.8.9 2.1 1 .3.2.5.2.6.4.1.1.1.7-.1 1.3z"></path></svg>
+</a>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laundry — Elkhoi Home &amp; Property Services</title>
+<meta name="description" content="Elkhoi Laundry — washing, drying, folding, ironing, household laundry, express service and scheduled pickup &amp; delivery in Lusaka.">
+<link rel="icon" type="image/png" href="assets/elkhoi-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>.laundry-routes-section .route-box{background:var(--navy);border-radius:14px;padding:34px;color:var(--white)}
+.route-home{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:1.05rem;margin-bottom:22px}.route-home span:last-child{width:100%;margin-left:20px;color:rgba(255,255,255,.78);font-size:0.95rem}
+.route-dot{width:10px;height:10px;border-radius:50%;display:inline-block;flex:0 0 10px}.home-dot{background:var(--teal)}.south{background:#35a853}.southwest{background:#2878d8}.central{background:#7b4fc4}.east{background:#e6c400}.northeast{background:#e53935}
+.route-list{display:grid;grid-template-columns:1fr;gap:13px}.route-day{display:flex;align-items:flex-start;gap:12px;padding:13px 0;border-top:1px solid rgba(255,255,255,.13)}.route-day strong{font-family:var(--font-heading);font-size:0.97rem}.route-day p{margin-top:3px;color:rgba(255,255,255,.8);font-size:0.95rem}
+.route-note{margin-top:18px;color:var(--teal);font-size:0.91rem;font-weight:600}.route-details{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px;padding-top:24px;border-top:1px solid rgba(255,255,255,.15)}.route-details>div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:18px}.route-details h3{color:var(--white);font-size:1.05rem;margin-bottom:10px}.route-details p{color:rgba(255,255,255,.82);font-size:0.91rem;margin-top:6px}
+.payment-terms{margin-top:18px;padding:16px 18px;border:1px solid var(--grey-border);border-radius:10px;background:var(--grey-light)}.payment-terms strong{display:block;color:var(--navy);font-family:var(--font-heading);margin-bottom:8px}.payment-terms p{color:var(--ink-soft);font-size:0.91rem;margin-top:7px}
+.estimator-disclaimer{font-size:0.83rem;color:rgba(255,255,255,.7);margin-top:5px}@media(max-width:760px){.route-details{grid-template-columns:1fr}.route-home span:last-child{margin-left:0}}
+
+
+
+  .top-contact-bar{
+    background:var(--navy-deep); padding:8px 0;
+  }
+  .top-contact-bar .wrap{
+    display:flex; justify-content:flex-end; gap:22px; flex-wrap:wrap;
+  }
+  .top-contact-bar a{
+    color:rgba(255,255,255,0.85); text-decoration:none; font-size:0.87rem;
+    display:flex; align-items:center; gap:6px;
+  }
+  .top-contact-bar a:hover{color:var(--white);}
+  .top-contact-bar svg{width:14px; height:14px; fill:currentColor;}
+
+:root{--navy:#0D2A47;--navy-deep:#081A2E;--teal:#F4791E;--teal-deep:#D9650E;--white:#fff;--grey-light:#F4F6F7;--grey-border:#E3E7E9;--ink:#1D2528;--ink-soft:#5C6A70;--font-heading:'Sora',sans-serif;--font-body:'Inter',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--font-body);color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}img{max-width:100%;display:block}a{color:inherit;text-decoration:none}h1,h2,h3{font-family:var(--font-heading);color:var(--navy);font-weight:700;line-height:1.2}.wrap{max-width:1140px;margin:0 auto;padding:0 24px}section{padding:72px 0}.eyebrow{font-family:var(--font-heading);font-size:0.83rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);margin-bottom:14px}.section-head{max-width:680px;margin:0 auto 42px;text-align:center}.section-head h2{font-size:clamp(1.65rem,3.2vw,2.25rem);margin-bottom:12px}.section-head p{color:var(--ink-soft);font-size:1.07rem}.btn{display:inline-block;font-family:var(--font-heading);font-weight:600;font-size:1rem;padding:14px 28px;border-radius:6px;transition:background .18s,transform .18s}.btn-primary{background:var(--teal);color:var(--white)}.btn-primary:hover{background:var(--teal-deep);transform:translateY(-1px)}.btn-outline-white{border:2px solid var(--white);color:var(--white)}.btn-outline-white:hover{background:var(--white);color:var(--navy)}.btn-outline-navy{border:2px solid var(--navy);color:var(--navy)}.btn-outline-navy:hover{background:#123B5D;color:var(--white)}
+header{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--grey-border)}.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1140px;margin:0 auto}.nav-logo-img{height:42px;width:auto}.nav-links{display:flex;align-items:center;gap:28px;list-style:none}.nav-links a{color:var(--ink);font-weight:500;font-size:0.99rem}.nav-links a:hover,.nav-links a.active{color:var(--teal-deep)}.nav-links a.active{font-weight:600}
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%);color:var(--white);padding:78px 0 72px}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:center}.hero h1{font-size:clamp(2.35rem,5vw,4.05rem);color:var(--white);margin-bottom:16px}.hero h1 .accent{color:var(--teal)}.hero p{color:rgba(255,255,255,.78);font-size:1.1rem;max-width:610px}.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}.hero-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:18px}.hero-card img{width:100%;height:290px;object-fit:cover;border-radius:10px}.hero-card p{font-size:0.91rem;margin-top:12px}.pill-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}.pill{border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.05);border-radius:999px;padding:7px 11px;font-size:0.83rem;color:rgba(255,255,255,.85)}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.service-card{border:1px solid var(--grey-border);border-radius:12px;padding:26px;background:var(--white);box-shadow:0 8px 22px rgba(13,42,71,.06)}.service-card:hover{border-color:var(--teal)}.service-icon{width:62px;height:62px;border-radius:14px;background:var(--grey-light);padding:10px;margin-bottom:18px}.service-icon img{width:100%;height:100%;object-fit:contain}.service-card h3{font-size:1.1rem;margin-bottom:8px}.service-card p{color:var(--ink-soft);font-size:0.95rem}.price{margin-top:16px;color:var(--teal-deep);font-family:var(--font-heading);font-weight:700}.service-card ul{list-style:none;margin-top:12px}.service-card li{font-size:0.9rem;color:var(--ink-soft);padding:4px 0}.service-card li:before{content:'•';color:var(--teal);font-weight:700;margin-right:8px}
+.price-box{max-width:760px;margin:0 auto;background:var(--white);border:1px solid var(--grey-border);border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(13,42,71,.08)}table{width:100%;border-collapse:collapse}th{background:var(--navy);color:var(--white);font-family:var(--font-heading);font-size:0.87rem;text-align:left;padding:13px 16px}th:last-child,td:last-child{text-align:right}td{padding:12px 16px;border-bottom:1px solid var(--grey-border);font-size:0.95rem}tr:nth-child(even){background:var(--grey-light)}.price-value{color:var(--teal-deep);font-weight:700}.price-note{text-align:center;color:var(--ink-soft);font-size:0.9rem;margin-top:16px}
+.estimator{background:var(--grey-light)}.estimate-box{max-width:760px;margin:0 auto;background:var(--white);border:1px solid var(--grey-border);border-radius:14px;padding:28px}.estimate-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.form-group{display:flex;flex-direction:column;gap:7px}.form-group label{font-size:0.89rem;font-weight:600;color:#123B5D}.form-group input,.form-group select,.form-group textarea{padding:12px 13px;border:1px solid var(--grey-border);border-radius:6px;font:inherit;color:var(--ink);background:var(--white)}.estimate-result{margin-top:22px;padding:18px;border-radius:10px;background:var(--navy);color:var(--white)}.estimate-result strong{font-family:var(--font-heading);font-size:1.5rem;color:var(--teal)}.small{font-size:0.83rem;color:var(--ink-soft);margin-top:10px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}.step{text-align:center}.step-num{width:44px;height:44px;border-radius:50%;background:var(--navy);color:var(--white);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-family:var(--font-heading);font-weight:700}.step p,.why-card p,.business p{color:var(--ink-soft);font-size:0.95rem}.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.why-card{border:1px solid var(--grey-border);border-radius:10px;padding:22px}.why-card h3{font-size:1.05rem;margin-bottom:7px}.route-box{background:var(--navy);border-radius:14px;padding:34px;color:var(--white)}.route-box h2{color:var(--white)}.route-box p{color:rgba(255,255,255,.76);max-width:760px}.route-box .note{margin-top:15px;color:var(--teal);font-size:0.91rem;font-weight:600}.business{background:var(--grey-light)}.business-box{max-width:850px;margin:0 auto;text-align:center}.form-section{background:var(--navy)}.form-section h2{color:var(--white)}.form-section .section-head p{color:rgba(255,255,255,.75)}.quote-form{max-width:800px;margin:0 auto;background:#EAF2F7;border-radius:14px;padding:30px}.quote-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}.quote-form .form-group{margin-bottom:16px}.quote-form label{font-size:0.89rem;font-weight:600;color:#123B5D}.quote-form input,.quote-form select,.quote-form textarea{padding:12px 14px;border:1px solid var(--grey-border);border-radius:6px;font:inherit}.quote-form textarea{min-height:100px;resize:vertical}.optional{font-weight:400;color:#8a969b}.form-note{font-size:0.83rem;color:var(--ink-soft);margin:6px 0 18px}.success-message{display:none;margin-top:18px;padding:14px;border-radius:8px;background:#edf8f1;color:#245a38;font-size:0.93rem}.form-disclaimer{font-size:0.81rem;color:var(--ink-soft);margin:14px 0}.gallery-placeholder{border:1px dashed var(--grey-border);border-radius:12px;padding:34px;text-align:center;color:var(--ink-soft);background:var(--grey-light)}footer{background:var(--navy-deep);color:rgba(255,255,255,.8);padding:40px 0 24px;text-align:center;font-size:0.9rem}
+@media(max-width:850px){.hero-grid{grid-template-columns:1fr}.service-grid,.why-grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.nav-links{gap:14px}.nav{padding-left:18px;padding-right:18px}}@media(max-width:640px){section{padding:58px 0}.nav-links{display:none}.service-grid,.why-grid,.steps,.estimate-grid,.quote-form .form-row{grid-template-columns:1fr}.hero{padding:60px 0}.hero-card img{height:230px}th,td{padding:10px 9px;font-size:0.87rem}.quote-form{padding:22px}}
+
+/* CLASSIC ELKHOI VISUAL REFRESH */
+:root{--navy:#123B5D;--navy-deep:#08243B;--teal:#E87822;--teal-deep:#C95D0E;--cream:#FBF8F3;--sage:#EAF1EE;--gold:#C79A52;--ink:#24313A;--ink-soft:#66737A;--white:#fff;}
+body{background:var(--cream)!important;}
+header{background:rgba(255,255,255,.98)!important;border-bottom:1px solid #E7E0D6!important;box-shadow:0 4px 18px rgba(8,36,59,.06);}
+.hero{background:linear-gradient(120deg,rgba(8,36,59,.95),rgba(18,59,93,.86)),url('assets/hero-bg.jpg') center/cover!important;position:relative;}
+.hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(90deg,var(--teal),var(--gold),var(--teal));}
+.service-card,.why-card,.route-box,.estimate-box{border:1px solid #E4DDD3!important;box-shadow:0 12px 30px rgba(18,59,93,.07)!important;border-radius:16px!important;}
+.service-card:before{content:"";display:block;height:4px;background:linear-gradient(90deg,var(--teal),var(--gold));position:absolute;left:0;right:0;top:0;}
+.section-head .eyebrow,.eyebrow{color:var(--teal)!important;font-weight:700;letter-spacing:.16em;text-transform:uppercase;}
+section:nth-of-type(even){background:#F4F6F5;}
+.estimate-result{background:var(--navy)!important;}
+.business-box{background:linear-gradient(120deg,#08243B,#123B5D)!important;border-radius:18px!important;}
+footer{background:#061A2A!important;}
+
+
+/* ===== ELKHOI BULK ESTIMATOR — LION TOUCH-STYLE STRUCTURE, ELKHOI COLOURS ===== */
+.estimator{background:var(--navy)!important;padding:64px 0 72px;}
+.estimator .section-head{max-width:760px;margin:0 auto 30px;text-align:center;}
+.estimator .section-head .eyebrow{color:var(--teal)!important;font-size:0.83rem;font-weight:800;letter-spacing:.16em;}
+.estimator .section-head h2{color:var(--white)!important;font-size:clamp(1.7rem,3vw,2.25rem)!important;line-height:1.2;margin-bottom:10px;}
+.estimator .section-head p:not(.eyebrow){color:rgba(255,255,255,.82)!important;}
+.elkhoi-estimator{max-width:1120px!important;margin:0 auto;background:var(--navy-deep)!important;border:1px solid rgba(255,255,255,.22)!important;border-radius:14px!important;padding:18px!important;box-shadow:0 18px 45px rgba(8,36,59,.28)!important;}
+.estimator-layout{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch;}
+.weight-reference,.estimate-panel{background:var(--cream)!important;border:1px solid rgba(18,59,93,.16)!important;border-radius:12px!important;padding:20px!important;}
+.estimator-card-title{display:block!important;margin-bottom:18px!important;}
+.estimator-card-title h3{color:var(--navy)!important;font-size:1.4rem!important;margin:0 0 4px!important;}
+.estimator-card-title p{color:var(--ink-soft)!important;font-size:0.89rem!important;margin:0!important;}
+.estimator-icon{display:none!important;}
+.weight-list{display:grid;gap:7px;}
+.weight-list>div{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:9px 12px;background:var(--white)!important;border:1px solid #E4DDD3!important;border-radius:4px!important;color:var(--ink)!important;font-size:0.87rem!important;min-height:36px;}
+.weight-list strong{color:var(--teal)!important;font-family:var(--font-heading);white-space:nowrap;font-size:0.89rem;}
+.estimate-panel .estimate-grid{display:grid;grid-template-columns:1fr;gap:15px;}
+.estimate-panel .form-group{margin:0;}
+.estimate-panel label{display:block;color:var(--navy)!important;font-size:0.85rem;font-weight:700;margin-bottom:7px;}
+.weight-slider-wrap{padding:13px 14px 10px;background:var(--white)!important;border-radius:4px;border:1px solid #E4DDD3!important;}
+.weight-slider-head{display:flex;justify-content:space-between;align-items:center;gap:14px;color:var(--navy);margin-bottom:10px;}
+.weight-slider-head span:first-child{font-size:0.87rem;font-weight:600;}
+.weight-value{color:var(--teal)!important;font-family:var(--font-heading);font-weight:800;font-size:1.1rem;white-space:nowrap;}
+#weight{width:100%;height:6px;margin:4px 0 2px;accent-color:var(--teal);cursor:pointer;}
+.estimate-panel select{width:100%;box-sizing:border-box;background:var(--white)!important;color:var(--ink)!important;border:1px solid #E4DDD3!important;border-radius:4px!important;padding:13px 14px!important;font:inherit;min-height:48px;}
+.estimate-panel select option{background:var(--white);color:var(--ink);}
+.service-choice{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 14px;background:var(--white)!important;border:1px solid #E4DDD3!important;border-radius:4px;color:var(--ink);cursor:pointer;transition:.18s ease;}
+.service-choice:hover,.service-choice.selected{border-color:var(--teal)!important;box-shadow:0 0 0 1px rgba(232,120,34,.3);}
+.service-choice-left{display:flex;align-items:center;gap:10px;min-width:0;}
+.service-choice input{accent-color:var(--teal);width:16px;height:16px;flex:0 0 auto;}
+.service-choice-title{font-weight:700;font-size:0.89rem;line-height:1.25;}
+.service-choice-price{color:var(--teal)!important;font-family:var(--font-heading);font-weight:800;white-space:nowrap;font-size:0.95rem;}
+.express-box{background:rgba(232,120,34,.10)!important;border:1px solid var(--teal)!important;border-radius:4px!important;padding:12px 14px!important;color:var(--ink)!important;}
+.express-box label{margin:0!important;display:flex!important;align-items:center;gap:9px;color:var(--navy)!important;}
+.express-box input{accent-color:var(--teal);width:16px;height:16px;}
+.express-box small{display:block;color:var(--teal-deep);margin:5px 0 0 25px;font-size:0.77rem;}
+.estimate-panel .estimate-result{margin-top:15px;background:var(--navy)!important;border:1px solid rgba(18,59,93,.2)!important;border-radius:4px!important;padding:15px 16px!important;color:var(--white)!important;}
+.estimate-panel .estimate-result .result-label{display:block;color:rgba(255,255,255,.82);font-size:0.85rem;margin-bottom:2px;}
+.estimate-panel .estimate-result strong{color:var(--teal)!important;font-size:1.7rem!important;font-family:var(--font-heading);}
+.estimator-disclaimer{font-size:0.75rem!important;color:rgba(255,255,255,.72)!important;margin-top:5px!important;line-height:1.45;}
+.estimator-book{display:block;text-align:center;background:var(--teal)!important;color:var(--white)!important;margin-top:16px;border-radius:4px!important;font-family:var(--font-heading);font-weight:800;padding:15px 20px!important;}
+.estimator-book:hover{background:var(--teal-deep)!important;color:var(--white)!important;transform:translateY(-1px);}
+@media(max-width:800px){.estimator-layout{grid-template-columns:1fr;}.weight-reference,.estimate-panel{padding:18px!important;}.weight-list>div{padding:9px 10px;}}
+
+/* APPROVED ELKHOI FORM PALETTE — preserved across all forms */
+.contact-form, .quote-form { background:#EAF2F7 !important; }
+.contact-form label, .quote-form label, .form-group label { color:#123B5D !important; }
+.contact-form input, .contact-form select, .contact-form textarea, .quote-form input, .quote-form select, .quote-form textarea, .form-group input, .form-group select, .form-group textarea { background:#FFFFFF !important; color:#24313A !important; border-color:#C9D8E1 !important; }
+.contact-form input::placeholder, .contact-form textarea::placeholder, .quote-form input::placeholder, .quote-form textarea::placeholder, .form-group input::placeholder, .form-group textarea::placeholder { color:#66737A !important; opacity:1; }
+.contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus, .quote-form input:focus, .quote-form select:focus, .quote-form textarea:focus, .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline-color:#123B5D !important; border-color:#123B5D !important; }
+</style>
+
+<style id="elkhoi-final-estimator-corrections">
+/* FINAL ELKHOI BULK ESTIMATOR CORRECTIONS */
+.estimator { background:#0D2A47 !important; }
+.estimator .section-head h2 { font-size:1.6rem !important; line-height:1.2 !important; color:#FFFFFF !important; }
+.estimator .section-head .eyebrow { color:#F4791E !important; font-size:0.79rem !important; }
+.estimator .section-head p:not(.eyebrow) { color:rgba(255,255,255,.82) !important; }
+.elkhoi-estimator { background:#081A2E !important; border-color:rgba(255,255,255,.22) !important; }
+.elkhoi-estimator .weight-reference,
+.elkhoi-estimator .estimate-panel { background:#123B5D !important; border-color:rgba(255,255,255,.18) !important; color:#FFFFFF !important; }
+.elkhoi-estimator .estimator-card-title h3,
+.elkhoi-estimator .estimator-card-title p,
+.elkhoi-estimator label,
+.elkhoi-estimator .weight-slider-head { color:#FFFFFF !important; }
+.elkhoi-estimator .weight-list > div,
+.elkhoi-estimator .weight-slider-wrap,
+.elkhoi-estimator select,
+.elkhoi-estimator .service-choice { background:#FFFFFF !important; color:#1D2528 !important; border-color:#E3E7E9 !important; }
+.elkhoi-estimator .weight-list strong,
+.elkhoi-estimator .weight-value,
+.elkhoi-estimator .service-choice-price,
+.elkhoi-estimator .estimate-panel .estimate-result strong { color:#F4791E !important; }
+.elkhoi-estimator #weight { accent-color:#F4791E !important; }
+.elkhoi-estimator .service-choice.selected,
+.elkhoi-estimator .service-choice:hover { border-color:#F4791E !important; box-shadow:0 0 0 1px rgba(244,121,30,.35) !important; }
+.elkhoi-estimator .express-box { background:rgba(244,121,30,.12) !important; border-color:#F4791E !important; color:#FFFFFF !important; }
+.elkhoi-estimator .express-box label { color:#FFFFFF !important; }
+.elkhoi-estimator .estimate-panel .estimate-result { background:#0D2A47 !important; color:#FFFFFF !important; border-color:rgba(255,255,255,.16) !important; }
+.elkhoi-estimator .estimator-book { background:#F4791E !important; color:#FFFFFF !important; }
+.elkhoi-estimator .estimator-book:hover { background:#D9650E !important; }
+</style>
+<style>/* Elkhoi form background trial */
+</style>
+<style id="elkhoi-approved-form-colours">
+/* Approved Elkhoi form palette — preserve all other website colours. */
+form {
+  background:#EAF2F7 !important;
+  color:#24313A !important;
+}
+form label, form .optional, form .helper-text, form .form-note, form .form-disclaimer {
+  color:#123B5D !important;
+}
+form input,
+form select,
+form textarea {
+  background:#FFFFFF !important;
+  color:#24313A !important;
+  border:1px solid #C9D8E1 !important;
+}
+form input::placeholder,
+form textarea::placeholder {
+  color:#66737A !important;
+  opacity:1;
+}
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color:#123B5D !important;
+  outline:none;
+  box-shadow:0 0 0 2px rgba(18,59,93,.12) !important;
+}
+form .success-message {
+  color:#24313A;
+}
+</style>
+
+<style id="elkhoi-typography-normalization">
+/* Elkhoi typography normalization: keeps the existing visual hierarchy while making equivalent text consistent. */
+html { font-size: 16px; }
+body { font-size: 1.05rem; }
+.nav-links a { font-size: 1rem !important; }
+.section-head p { font-size: 1.05rem !important; }
+.step p, .why-item p, .why-card p, .business p { font-size: 1rem !important; }
+.service-card p { font-size: 1rem !important; }
+.form-group label, .quote-form label, label { font-size: 0.9rem !important; }
+.form-group input, .form-group select, .form-group textarea, .quote-form input, .quote-form select, .quote-form textarea { font-size: 1rem !important; }
+footer { font-size: 0.9rem !important; }
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .section-head p { font-size: 1.05rem !important; }
+  .step p, .why-item p, .why-card p, .business p, .service-card p { font-size: 1rem !important; }
+}
+</style>
+</head>
+<body>
+<div class="top-contact-bar">
+<div class="wrap">
+<a href="tel:+260572313595"><svg viewbox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"></path></svg> +260 572 313 595</a>
+<a href="https://wa.me/message/NRMCE6TWNKXDH1" rel="noopener" target="_blank"><svg viewbox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4C8.6 21.5 10.3 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.7-2.8-1.1-4.6-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.2.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.2.3-.3.5-.2.2-.3.3-.5.5-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.2 2.4 1.5 2.7 1.7.3.2.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.8.9 2.1 1 .3.2.5.2.6.4.1.1.1.7-.1 1.3z"></path></svg> WhatsApp Us</a>
+<a href="mailto:elkhoizm@gmail.com"><svg viewbox="0 0 24 24"><path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6zm2 0l8 6 8-6H4zm16 2.2-8 6-8-6V18h16V8.2z"></path></svg> elkhoizm@gmail.com</a>
+</div>
+</div>
+<header>
+<div class="nav">
+<a class="logo-placeholder" href="index.html">
+<img alt="Elkhoi Home &amp; Property Services" class="nav-logo-img" src="assets/elkhoi-logo.png"/>
+</a>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">Home</a></li>
+<li><a href="index.html#services">Services</a></li>
+<li><a href="laundry.html" class="active">Laundry</a></li>
+<li><a href="get-quote.html">Get Quote</a></li>
+<li><a href="contact.html">Contact</a></li>
+      <li><a href="policies.html">Policies</a></li>
+</ul>
+<div class="nav-right">
+<a class="btn btn-primary" href="get-quote.html">Request a Service</a>
+<button aria-expanded="false" aria-label="Toggle menu" class="hamburger" id="hamburgerBtn">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+</header>
+
+<section class="hero"><div class="wrap hero-grid"><div>
+<p class="eyebrow" style="color:var(--teal)">Elkhoi Laundry</p>
+<h1>Laundry <span class="accent">Made Simple.</span></h1>
+<p>Convenient laundry care with flexible service options, scheduled pickup &amp; delivery, and clear starting prices.</p>
+<div class="hero-actions"><a href="https://wa.me/message/NRMCE6TWNKXDH1" target="_blank" rel="noopener" class="btn btn-outline-white">WhatsApp Us</a></div>
+<div class="pill-row"><span class="pill">Wash</span><span class="pill">Dry</span><span class="pill">Fold</span><span class="pill">Iron</span><span class="pill">Pickup &amp; Delivery</span><span class="pill">Express</span></div>
+</div><div class="hero-card"><img src="assets/work-laundry.jpg" alt="Elkhoi Laundry service"><p>Real Elkhoi laundry photos will be added here as the service gets underway.</p></div></div></section>
+
+<section><div class="wrap"><div class="section-head"><p class="eyebrow">Our Laundry Services</p><h2>Choose the laundry service that suits you</h2><p>From everyday washing to individual household items and express service.</p></div><div class="service-grid">
+<div class="service-card"><div class="service-icon"><img src="assets/icon-laundry.png" alt="Wash only"></div><h3>Wash Only</h3><p>Washing for everyday laundry.</p><div class="price">From K30/kg</div></div>
+<div class="service-card"><div class="service-icon"><img src="assets/icon-laundry.png" alt="Wash dry and fold"></div><h3>Wash, Dry &amp; Fold</h3><p>Wash, dry and neatly fold your laundry.</p><div class="price">From K40/kg</div></div>
+<div class="service-card"><div class="service-icon"><img src="assets/icon-laundry.png" alt="Wash dry fold and iron"></div><h3>Wash, Dry, Fold &amp; Iron</h3><p>A complete wash-to-ready service.</p><div class="price">From K50/kg</div></div>
+<div class="service-card"><div class="service-icon"><img src="assets/icon-laundry.png" alt="Ironing"></div><h3>Ironing Only</h3><p>For customers who only need clothes pressed.</p><div class="price">From K20/kg</div></div>
+<div class="service-card"><div class="service-icon"><img src="assets/icon-laundry.png" alt="Household items"></div><h3>Household Items</h3><p>Blankets, duvets and curtains.</p><div class="price">From K70</div><ul><li>Blankets — From K70</li><li>Duvets — From K120</li><li>Curtains — From K150</li></ul></div>
+<div class="service-card"><div class="service-icon"><img src="assets/icon-laundry.png" alt="Special items"></div><h3>Special Items</h3><p>Selected individual garments.</p><div class="price">Starting prices</div><ul><li>Suits — From K65</li><li>Shirts — From K25</li><li>Trousers — From K30</li></ul></div>
+<div class="service-card"><div class="service-icon"><img src="assets/icon-laundry.png" alt="Express laundry"></div><h3>Express / Same-Day</h3><p>Priority turnaround where available.</p><div class="price">+50%</div><p style="margin-top:7px">Subject to capacity and collection timing.</p></div>
+<div class="service-card"><div class="service-icon"><img src="assets/icon-laundry.png" alt="Business laundry"></div><h3>Business / Bulk Laundry</h3><p>For businesses with regular or larger laundry requirements.</p><div class="price">Request a Quote</div></div>
+<div class="service-card"><div class="service-icon"><img src="assets/icon-laundry.png" alt="Pickup and delivery"></div><h3>Pickup &amp; Delivery</h3><p>Scheduled collection and return based on your service area.</p><div class="price">Service-area based</div></div>
+</div></div></section>
+
+<section class="estimator"><div class="wrap">
+<div class="section-head"><p class="eyebrow">BULK ESTIMATOR</p><h2>Calculate your laundry weight and estimated cost</h2><p>Use the weight reference to estimate your laundry load, then choose a service.</p></div>
+<div class="estimate-box elkhoi-estimator">
+<div class="estimator-layout">
+<div class="weight-reference">
+<div class="estimator-card-title"><h3>Weight Reference</h3><p>Use these examples to estimate your laundry weight.</p></div>
+<div class="weight-list">
+<div><span>10 Shirts</span><strong>3 kg</strong></div>
+<div><span>10 Trousers</span><strong>6 kg</strong></div>
+<div><span>20 School Uniforms</span><strong>10 kg</strong></div>
+<div><span>Single Duvet</span><strong>3 kg</strong></div>
+<div><span>Double Duvet</span><strong>4 kg</strong></div>
+<div><span>King Duvet</span><strong>5 kg</strong></div>
+<div><span>30kg Bundle</span><strong>30 kg</strong></div>
+<div><span>50kg Bundle</span><strong>50 kg</strong></div>
+<div><span>100kg Bundle</span><strong>100 kg</strong></div>
+<div><span>200kg Bundle</span><strong>200 kg</strong></div>
+</div></div>
+<div class="estimate-panel">
+<div class="estimator-card-title"><h3>Your Estimate</h3><p>Calculate your laundry price.</p></div>
+<div class="estimate-grid">
+<div class="form-group"><div class="weight-slider-wrap"><div class="weight-slider-head"><span>Estimated Weight</span><span class="weight-value" id="weightDisplay">5 kg</span></div><input id="weight" type="range" min="3" max="200" step="0.5" value="5" aria-label="Estimated laundry weight in kilograms"></div></div>
+<div class="form-group"><label for="service">Laundry Service</label><select id="service"><option value="30">Wash Only — K30/kg</option><option value="40" selected>Wash, Dry &amp; Fold — K40/kg</option><option value="50">Wash, Dry, Fold &amp; Iron — K50/kg</option><option value="20">Ironing Only — K20/kg</option></select></div>
+<div class="service-choice selected" id="expressChoice"><div class="service-choice-left"><input id="express" type="checkbox" aria-label="Express Same Day"><div class="service-choice-title">Express Same Day</div></div><div class="service-choice-price">+50%</div></div>
+</div>
+<div class="estimate-result"><span class="result-label">Estimated laundry price:</span><strong id="estimate">K200</strong><div class="estimator-disclaimer">Estimated laundry charge only. Minimum order: 3 kg. Pickup &amp; delivery charges are separate. Final weight and price are confirmed by Elkhoi.</div></div>
+<a href="#request" class="btn estimator-book">Book Now →</a>
+</div></div></div></div></section>
+
+<section class="laundry-routes-section">
+<div class="wrap">
+<div class="section-head">
+<p class="eyebrow">Pickup &amp; Delivery</p>
+<h2>Laundry Pickup Routes</h2>
+<p>Scheduled pickup and delivery is organised by route day so collections and returns can be efficient and affordable.</p>
+</div>
+<div class="route-box">
+<div class="route-home"><span class="route-dot home-dot"></span><strong>🏠 KAMWALA — FREE PICKUP &amp; DELIVERY</strong><span>Kamwala Centre / immediate Kamwala only.</span></div>
+<div class="route-list">
+<div class="route-day"><span class="route-dot south"></span><div><strong>MONDAY — SOUTH</strong><p>Kabwata • Chilenje • Libala • Chalala • Lilayi</p></div></div>
+<div class="route-day"><span class="route-dot southwest"></span><div><strong>TUESDAY — SOUTH/SOUTH-WEST</strong><p>Kamwala South • Makeni</p></div></div>
+<div class="route-day"><span class="route-dot central"></span><div><strong>WEDNESDAY — CENTRAL/NORTH</strong><p>Rhodes Park • Longacres • Northmead • Olympia • Roma • Avondale</p></div></div>
+<div class="route-day"><span class="route-dot east"></span><div><strong>THURSDAY — WOODLANDS</strong><p>Woodlands • Kabulonga • Sunningdale • Ibex Hill</p></div></div>
+<div class="route-day"><span class="route-dot northeast"></span><div><strong>FRIDAY — EAST/NORTH-EAST</strong><p>Kalingalinga • Munali • PHI • Chelstone</p></div></div>
+</div>
+<p class="route-note">Additional areas may be served on scheduled or rotating routes depending on bookings and route availability.</p>
+<div class="route-day" style="margin-top:10px;border-top:1px solid rgba(255,255,255,.13);padding-top:16px"><span class="route-dot" style="background:#9aa7b1"></span><div><strong>ADDITIONAL / ROTATING AREAS</strong><p>John Laing • Mtendere • Nyumba Yanga • Chainda • Kaunda Square • Thornpark • Fairview • Chudleigh • Kalundu • Jesmondine • Salama Park • Villa Elizabetha • Chamba Valley</p></div></div>
+<p class="route-note">Pickup &amp; delivery fees vary by service area. Please check our Pricing page for current route fees.</p>
+<div class="route-details">
+<div><h3>Pickup Times</h3><p><strong>Morning:</strong> 07:00–08:30</p><p><strong>Afternoon:</strong> 14:00–18:30 (subject to route availability)</p><p class="route-note">Bookings must be made at least 1 day before pickup.</p></div>
+<div><h3>Laundry Turnaround</h3><p>Monday pickup → Wednesday delivery</p><p>Tuesday pickup → Thursday delivery</p><p>Wednesday pickup → Friday delivery</p><p>Thursday pickup → Saturday morning delivery</p><p>Friday pickup → Sunday afternoon delivery</p></div>
+<div><h3>Laundry Payment</h3><p><strong>At pickup:</strong> 50% of the laundry charge + full pickup/delivery fee.</p><p><strong>At delivery:</strong> remaining 50% of the laundry charge.</p><p><strong>Payment methods:</strong> Airtel Money / MTN Money</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<section style="background:var(--grey-light)"><div class="wrap"><div class="section-head"><p class="eyebrow">How It Works</p><h2>From your door to clean laundry</h2></div><div class="steps"><div class="step"><div class="step-num">1</div><h3>Request</h3><p>Tell us what laundry you need and where you are located.</p></div><div class="step"><div class="step-num">2</div><h3>Pickup</h3><p>We arrange collection based on your service area and schedule.</p></div><div class="step"><div class="step-num">3</div><h3>Laundry Care</h3><p>Your selected laundry service is carried out according to the agreed requirements.</p></div><div class="step"><div class="step-num">4</div><h3>Delivery</h3><p>We arrange return delivery and confirm the completed order.</p></div></div></div></section>
+
+<section><div class="wrap"><div class="section-head"><p class="eyebrow">Why Choose Elkhoi</p><h2>The simple things, done clearly</h2></div><div class="why-grid"><div class="why-card"><h3>Convenient Laundry Service</h3><p>Request laundry without needing to organise every step yourself.</p></div><div class="why-card"><h3>Scheduled Pickup &amp; Delivery</h3><p>Route-based collection and return will make the service easier to plan as it grows.</p></div><div class="why-card"><h3>Clear Starting Prices</h3><p>See starting prices before you request service.</p></div><div class="why-card"><h3>Express Option</h3><p>Priority service is available at an additional 50%, subject to capacity.</p></div><div class="why-card"><h3>Flexible Laundry Options</h3><p>Choose washing, drying, folding, ironing or selected individual items.</p></div><div class="why-card"><h3>Home &amp; Business Laundry</h3><p>We can handle household laundry and discuss regular business requirements.</p></div></div></div></section>
+
+<section class="business"><div class="wrap business-box"><p class="eyebrow">Business Laundry</p><h2>Need Laundry for Your Business?</h2><p>Hotels, guest houses, restaurants, offices and other businesses can request a bulk or recurring laundry quotation based on volume and requirements.</p><div style="margin-top:24px"><a href="#request" class="btn btn-primary">Request a Bulk Quote</a></div></div></section>
+
+<section><div class="wrap"><div class="section-head"><p class="eyebrow">Real Work</p><h2>Our Laundry Gallery</h2><p>We will replace the placeholder with real Elkhoi laundry photos as soon as we start completing customer orders.</p></div><div class="gallery-placeholder">Real laundry handling, packaging, pickup and delivery photos will be added here. No stock photos will be used as proof of Elkhoi work.</div></div></section>
+
+<section class="form-section" id="request"><div class="wrap"><div class="section-head"><p class="eyebrow">Request Laundry Service</p><h2>Tell us what you need</h2><p>Send a request and an Elkhoi representative will contact you to confirm the details, availability and final price.</p></div><form class="quote-form" action="https://formspree.io/f/xjyvlggn" method="POST" id="laundryForm"><input type="hidden" name="form_type" value="Laundry Service Request"><input type="hidden" name="subject" value="New Elkhoi Laundry Service Request"><div class="quote-form-inner"><div class="form-row"><div class="form-group"><label for="name">Full Name</label><input id="name" name="name" required></div><div class="form-group"><label for="phone">Phone / WhatsApp</label><input id="phone" name="phone" required></div></div><div class="form-row"><div class="form-group"><label for="serviceRequired">Service Required</label><select id="serviceRequired" name="service_required" required><option value="">Select a service</option><option>Wash Only</option><option>Wash, Dry &amp; Fold</option><option>Wash, Dry, Fold &amp; Iron</option><option>Ironing Only</option><option>Household Items</option><option>Special Items</option><option>Express / Same-Day</option><option>Business / Bulk Laundry</option><option>Pickup &amp; Delivery</option></select></div><div class="form-group"><label for="location">Location / Area</label><input id="location" name="location" required placeholder="e.g. Kamwala"></div></div><div class="form-row"><div class="form-group"><label for="email">Email <span class="optional">(Optional)</span></label><input id="email" type="email" name="email"></div><div class="form-group"><label for="weightRequest">Estimated Weight <span class="optional">(Optional)</span></label><input id="weightRequest" type="number" min="3" step="0.5" name="estimated_weight_kg" placeholder="e.g. 8"></div></div><div class="form-row"><div class="form-group"><label for="date">Preferred Date <span class="optional">(Optional)</span></label><input id="date" type="date" name="preferred_date"></div><div class="form-group"><label for="time">Preferred Time <span class="optional">(Optional)</span></label><input id="time" type="time" name="preferred_time"></div></div><div class="form-group"><label for="requirements">Additional Requirements <span class="optional">(Optional)</span></label><textarea id="requirements" name="additional_requirements" placeholder="Tell us about special items, stains, express service or anything else we should know."></textarea></div><div class="form-group"><label>Photos <span class="optional">(Optional)</span></label><p class="helper-text" style="margin:0;color:var(--ink-soft);font-size:0.87rem;">If you have photos of special items or laundry that may need attention, please send them to us on WhatsApp after submitting your request.</p></div><p class="form-disclaimer">Submitting this form is a service request and does not automatically confirm your booking or final price.</p><button type="submit" class="btn btn-primary">Send Laundry Request</button><div class="success-message" id="successMessage">Thank you. Your service request has been received. An Elkhoi representative will contact you to confirm the details, availability and final price.</div></div></form></div></section>
+
+<footer><div class="wrap"><p>&copy; 2026 Elkhoi Home &amp; Property Services. All rights reserved. Elkhoi Home &amp; Property Services is the trading name of Elkhoi Services.</p></div></footer>
+<script>
+function updateEstimate(){
+const input=document.getElementById('weight');
+const w=Math.max(3,parseFloat(input.value)||3);
+const rate=parseFloat(document.getElementById('service').value)||0;
+const express=document.getElementById('express').checked?0.5:0;
+const total=w*rate*(1+express);
+document.getElementById('weightDisplay').textContent=(Number.isInteger(w)?w:w.toFixed(1))+' kg';
+document.getElementById('estimate').textContent='K'+(Math.round(total*100)/100).toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:2});
+document.getElementById('expressChoice').classList.toggle('selected',document.getElementById('express').checked);
+}
+['weight','service','express'].forEach(id=>{
+document.getElementById(id).addEventListener('input',updateEstimate);
+document.getElementById(id).addEventListener('change',updateEstimate);
+});
+updateEstimate();
+const form=document.getElementById('laundryForm');const success=document.getElementById('successMessage');form.addEventListener('submit',async e=>{e.preventDefault();const data=new FormData(form);try{const r=await fetch(form.action,{method:'POST',body:data,headers:{Accept:'application/json'}});if(r.ok){form.reset();document.getElementById('weight').value=5;document.getElementById('service').value='40';document.getElementById('express').value='0';updateEstimate();success.style.display='block';success.scrollIntoView({behavior:'smooth',block:'center'});}else{alert('We could not send the request right now. Please try WhatsApp instead.');}}catch(err){alert('We could not send the request right now. Please try WhatsApp instead.');}});
+</script>
+</body></html>

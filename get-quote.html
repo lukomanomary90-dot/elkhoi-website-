@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get A Quote — Elkhoi Home & Property Services</title>
+<meta name="description" content="Request a starting quote for cleaning, maintenance, laundry or property management services from Elkhoi in Lusaka, Zambia.">
+<link rel="icon" type="image/png" href="assets/elkhoi-logo.png">
+
+<!--
+  ============================================================
+  ELKHOI GET A QUOTE PAGE
+  ============================================================
+  This is the detailed SERVICE quote request — property size,
+  condition, service type, requirements etc. For a simple general
+  inquiry instead, that's the separate contact.html page.
+
+  The form below is front-end only — it needs a Formspree (or
+  similar) endpoint pasted into the action="" attribute before it
+  will actually deliver submissions anywhere. This can be the same
+  endpoint already used on index.html's booking form.
+  ============================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --navy:#0D2A47;
+    --navy-deep:#081A2E;
+    --teal:#F4791E;
+    --teal-deep:#D9650E;
+    --white:#FFFFFF;
+    --grey-light:#F4F6F7;
+    --grey-border:#E3E7E9;
+    --ink:#1D2528;
+    --ink-soft:#5C6A70;
+    --font-heading:'Sora', sans-serif;
+    --font-body:'Inter', sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--font-body); color:var(--ink); background:var(--white); line-height:1.6; -webkit-font-smoothing:antialiased;}
+  img{max-width:100%; display:block;}
+  h1,h2,h3{font-family:var(--font-heading); color:var(--navy); font-weight:700; line-height:1.2;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1140px; margin:0 auto; padding:0 24px;}
+  section{padding:60px 0;}
+  .eyebrow{font-family:var(--font-heading); font-size:0.83rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--teal-deep); margin-bottom:14px;}
+  .btn{display:inline-block; font-family:var(--font-heading); font-weight:600; font-size:1rem; padding:14px 28px; border-radius:6px; transition:background .18s, transform .18s;}
+  .btn-primary{background:var(--teal); color:var(--white); border:none; cursor:pointer;}
+  .btn-primary:hover{background:var(--teal-deep); transform:translateY(-1px);}
+  .btn-block{width:100%; text-align:center;}
+
+  /* Header */
+  header{position:sticky; top:0; z-index:100; background:var(--white); border-bottom:1px solid var(--grey-border);}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:16px 24px; max-width:1140px; margin:0 auto;}
+  .nav-logo-img{height:42px; width:auto;}
+  .nav-links{display:flex; align-items:center; gap:32px; list-style:none;}
+  .nav-links a{color:var(--ink); font-weight:500; font-size:1rem;}
+  .nav-links a:hover{color:var(--teal-deep);}
+  .nav-links a.active{color:var(--teal-deep); font-weight:600;}
+
+  /* Page hero */
+  .page-hero{background:var(--navy); padding:56px 0 40px; text-align:center;}
+  .page-hero h1{font-size:clamp(2.05rem,4.5vw,3.05rem); margin-bottom:14px; color:var(--white);}
+  .page-hero h1 .accent{color:var(--teal);}
+  .page-hero p{color:rgba(255,255,255,0.78); max-width:560px; margin:0 auto; font-size:1.07rem;}
+
+  /* Quote form card */
+  .quote-form-wrap{max-width:720px; margin:-40px auto 0; position:relative; z-index:2;}
+  .quote-form-card{background:var(--white); border-radius:14px; padding:40px; box-shadow:0 20px 50px rgba(13,42,71,0.15);}
+  .form-group{margin-bottom:18px; display:flex; flex-direction:column; gap:6px;}
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:0;}
+  label{font-size:0.9rem; font-weight:500; color:var(--ink-soft);}
+  input, select, textarea{
+    padding:12px 14px; border:1px solid var(--grey-border); border-radius:6px;
+    font-family:var(--font-body); font-size:1rem; color:var(--ink);
+  }
+  textarea{resize:vertical; min-height:110px;}
+  .helper-text{font-size:0.87rem; color:var(--ink-soft); margin:-2px 0 8px;}
+
+  /* Trust strip below form */
+  .trust-strip{background:var(--grey-light); text-align:center;}
+  .trust-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:24px; max-width:900px; margin:0 auto;}
+  .trust-item{padding:20px;}
+  .trust-item h3{font-size:1.1rem; margin-bottom:8px;}
+  .trust-item p{color:var(--ink-soft); font-size:0.95rem;}
+
+  /* Footer */
+  footer{background:var(--navy-deep); color:rgba(255,255,255,0.8); padding:40px 0 24px; text-align:center; font-size:0.9rem;}
+  footer a{color:rgba(255,255,255,0.8);}
+  footer a:hover{color:var(--teal);}
+
+  @media (max-width:640px){
+    .form-row{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+    .quote-form-card{padding:28px 22px;}
+  }
+
+  .optional{font-weight:400; color:var(--ink-soft);}
+  .form-disclaimer{margin-top:12px; color:var(--ink-soft); font-size:0.87rem; text-align:center;}
+  .form-success{padding:26px; background:var(--grey-light); border:1px solid var(--grey-border); border-radius:10px; text-align:center;}
+  .form-success h3{margin-bottom:8px;}
+  .form-error{margin-top:14px; padding:12px 14px; background:#fff5f5; border:1px solid #f0cccc; border-radius:8px; color:#7a2525; font-size:0.95rem;}
+  input[type=file]{padding:10px; background:var(--grey-light);}
+
+/* APPROVED ELKHOI FORM PALETTE — preserved across all forms */
+.contact-form, .quote-form { background:#EAF2F7 !important; }
+.contact-form label, .quote-form label, .form-group label { color:#123B5D !important; }
+.contact-form input, .contact-form select, .contact-form textarea, .quote-form input, .quote-form select, .quote-form textarea, .form-group input, .form-group select, .form-group textarea { background:#FFFFFF !important; color:#24313A !important; border-color:#C9D8E1 !important; }
+.contact-form input::placeholder, .contact-form textarea::placeholder, .quote-form input::placeholder, .quote-form textarea::placeholder, .form-group input::placeholder, .form-group textarea::placeholder { color:#66737A !important; opacity:1; }
+.contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus, .quote-form input:focus, .quote-form select:focus, .quote-form textarea:focus, .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline-color:#123B5D !important; border-color:#123B5D !important; }
+</style>
+<style>/* Elkhoi form background trial */
+</style>
+<style id="elkhoi-approved-form-colours">
+/* Approved Elkhoi form palette — preserve all other website colours. */
+form {
+  background:#EAF2F7 !important;
+  color:#24313A !important;
+}
+form label, form .optional, form .helper-text, form .form-note, form .form-disclaimer {
+  color:#123B5D !important;
+}
+form input,
+form select,
+form textarea {
+  background:#FFFFFF !important;
+  color:#24313A !important;
+  border:1px solid #C9D8E1 !important;
+}
+form input::placeholder,
+form textarea::placeholder {
+  color:#66737A !important;
+  opacity:1;
+}
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color:#123B5D !important;
+  outline:none;
+  box-shadow:0 0 0 2px rgba(18,59,93,.12) !important;
+}
+form .success-message {
+  color:#24313A;
+}
+</style>
+
+<style id="elkhoi-typography-normalization">
+/* Elkhoi typography normalization: keeps the existing visual hierarchy while making equivalent text consistent. */
+html { font-size: 16px; }
+body { font-size: 1.05rem; }
+.nav-links a { font-size: 1rem !important; }
+.section-head p { font-size: 1.05rem !important; }
+.step p, .why-item p, .why-card p, .business p { font-size: 1rem !important; }
+.service-card p { font-size: 1rem !important; }
+.form-group label, .quote-form label, label { font-size: 0.9rem !important; }
+.form-group input, .form-group select, .form-group textarea, .quote-form input, .quote-form select, .quote-form textarea { font-size: 1rem !important; }
+footer { font-size: 0.9rem !important; }
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .section-head p { font-size: 1.05rem !important; }
+  .step p, .why-item p, .why-card p, .business p, .service-card p { font-size: 1rem !important; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="index.html">
+      <img src="assets/elkhoi-logo.png" alt="Elkhoi Home & Property Services" class="nav-logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="laundry.html">Laundry</a></li>
+      
+      <li><a href="get-quote.html" class="active">Get Quote</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="policies.html">Policies</a></li>
+    </ul>
+    <a href="contact.html" class="btn btn-primary">Contact Us</a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow" style="text-align:center; color:var(--teal);">Get A Quote</p>
+    <h1>Get Your <span class="accent">Starting Estimate</span></h1>
+    <p>Tell us about the job and we'll give you a starting price. We confirm the final quote on-site, before any work begins — no surprises after.</p>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="quote-form-wrap">
+    <div class="quote-form-card">
+      <form id="service-request-form" action="https://formspree.io/f/xjyvlggn" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_subject" value="New Elkhoi Service Request">
+        <div class="form-row">
+          <div class="form-group"><label for="g-name">Full Name</label><input type="text" id="g-name" name="name" required></div>
+          <div class="form-group"><label for="g-phone">Phone / WhatsApp Number</label><input type="tel" id="g-phone" name="phone" required></div>
+        </div>
+        <div class="form-group"><label for="g-email">Email Address <span class="optional">(Optional)</span></label><input type="email" id="g-email" name="email"></div>
+        <div class="form-group"><label for="g-service">Service Required</label>
+          <select id="g-service" name="service" required>
+            <option value="">Select a service</option>
+            <option value="cleaning">Elkhoi Cleaning</option><option value="maintenance">Elkhoi Maintenance</option><option value="property">Elkhoi Property Management</option>
+          </select>
+        </div>
+        <div class="form-group"><label for="g-location">Location / Area</label><input type="text" id="g-location" name="location" placeholder="e.g. Chalala, Northmead, Woodlands" required></div>
+        <div class="form-row">
+          <div class="form-group"><label for="g-type">Property Type <span class="optional">(Optional)</span></label><input type="text" id="g-type" name="property_type" placeholder="House, flat, office, etc."></div>
+          <div class="form-group"><label for="g-rooms">Number of Bedrooms / Rooms <span class="optional">(Optional)</span></label><input type="text" id="g-rooms" name="rooms"></div>
+        </div>
+        <div class="form-group"><label for="g-bathrooms">Number of Bathrooms <span class="optional">(Optional)</span></label><input type="text" id="g-bathrooms" name="bathrooms"></div>
+        <div class="form-group"><label for="g-condition">Property Condition <span class="optional">(Optional)</span></label>
+          <select id="g-condition" name="property_condition"><option value="">Select if known</option><option>Light / Well Maintained</option><option>Moderate</option><option>Heavy dirt / grease / mould</option><option>Post-construction / debris</option><option>Not sure</option></select>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label for="g-date">Preferred Date <span class="optional">(Optional)</span></label><input type="date" id="g-date" name="preferred_date"></div>
+          <div class="form-group"><label for="g-time">Preferred Time <span class="optional">(Optional)</span></label><input type="time" id="g-time" name="preferred_time"></div>
+        </div>
+        <div class="form-group"><label for="g-requirements">Additional Requirements <span class="optional">(Optional)</span></label><textarea id="g-requirements" name="additional_requirements" placeholder="Tell us anything else that may help us understand the job."></textarea></div>
+        <div class="form-group"><label for="g-photo">Photo Upload <span class="optional">(Optional)</span></label><input type="file" id="g-photo" name="photo" accept="image/*"><p class="helper-text">A photo can help us understand the work required, but it is not necessary.</p></div>
+        <button type="submit" class="btn btn-primary btn-block">Request a Service</button>
+        <p class="form-disclaimer">Submitting this form is a service request and does not automatically confirm your booking or final price.</p>
+      </form>
+      <div id="form-success" class="form-success" hidden>
+        <h3>Thank you.</h3>
+        <p>Your service request has been received. An Elkhoi representative will contact you to confirm the details, availability and final price.</p>
+      </div>
+      <div id="form-error" class="form-error" hidden>
+        <p>We couldn't submit the request right now. Please try again or contact us on WhatsApp.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust-strip">
+  <div class="wrap">
+    <div class="trust-grid">
+      <div class="trust-item"><h3>Starting Prices</h3><p>Public prices are starting points. Final pricing is confirmed according to the actual job.</p></div>
+      <div class="trust-item"><h3>Need More Detail?</h3><p>We'll contact you through phone or WhatsApp if additional information is needed for an accurate quotation.</p></div>
+      <div class="trust-item"><h3>Prefer WhatsApp?</h3><p><a href="https://wa.me/message/NRMCE6TWNKXDH1" target="_blank" rel="noopener" style="color:var(--teal-deep); font-weight:600;">WhatsApp Us →</a></p></div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  const form=document.getElementById('service-request-form');
+  const success=document.getElementById('form-success');
+  const error=document.getElementById('form-error');
+  if(!form) return;
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    const button=form.querySelector('button[type="submit"]');
+    button.disabled=true; button.textContent='Sending…'; error.hidden=true;
+    try{
+      const response=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+      if(!response.ok) throw new Error('Submission failed');
+      form.hidden=true; success.hidden=false;
+    }catch(err){
+      error.hidden=false;
+      button.disabled=false; button.textContent='Request a Service';
+    }
+  });
+})();
+</script>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 Elkhoi Home &amp; Property Services. All rights reserved. Elkhoi Home &amp; Property Services is the trading name of Elkhoi Services.</p>
+  </div>
+</footer>
+
+</body>
+</html>
