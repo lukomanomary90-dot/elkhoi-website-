@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Elkhoi Home &amp; Property Services — Your Property. Our Priority.</title>
 <meta content="Elkhoi Home &amp; Property Services connects Zambian homes, offices and properties with reliable maintenance, cleaning, laundry and property management services — all in one place." name="description"/>
-<link href="elkhoi-logo.png" rel="icon" type="image/png"/>
+<link href="assets/elkhoi-logo.png" rel="icon" type="image/png"/>
 <!--
   ============================================================
   ONECALL WEBSITE — v1 (MVP)
@@ -27,7 +27,7 @@
      page and are labeled with a section heading comment.
   3. Each service is one repeatable "card" block — copy/paste a card
      to add a 5th service later.
-  4. Service icons are full-color PNG images (icon-cleaning.png,
+  4. Service icons are full-color PNG images (assets/icon-cleaning.png,
      icon-maintenance.png, icon-laundry.png, icon-property.png). Replace
      any of those files to swap an icon — same filename, no code changes
      needed. The .service-icon box has a light grey backdrop sized for
@@ -45,7 +45,7 @@
      whichever address is registered on that Formspree account. To
      change where submissions go, update the email in the Formspree
      dashboard — no code changes needed here.
-  8. HERO BACKGROUND: uses a real photo (hero-bg.jpg) with a navy
+  8. HERO BACKGROUND: uses a real photo (assets/hero-bg.jpg) with a navy
      gradient overlay so the white headline text stays readable. To
      swap it, replace that file with another landscape-ish photo — no
      code changes needed.
@@ -169,7 +169,7 @@
     position:relative;
     background:
       linear-gradient(160deg, rgba(13,42,71,0.90) 0%, rgba(13,42,71,0.80) 55%, rgba(13,42,71,0.72) 100%),
-      url('hero-bg.jpg');
+      url('assets/hero-bg.jpg');
     background-size:cover;
     background-position:center 55%;
     padding:110px 0 80px;
@@ -443,7 +443,7 @@
 body{background:var(--cream);}
 header{background:rgba(255,255,255,.96);border-bottom:1px solid #E7E0D6;box-shadow:0 4px 18px rgba(8,36,59,.06);}
 .top-contact-bar{background:var(--navy-deep);}
-.hero{background:linear-gradient(120deg,rgba(8,36,59,.96),rgba(18,59,93,.88)),url('hero-bg.jpg') center/cover;position:relative;}
+.hero{background:linear-gradient(120deg,rgba(8,36,59,.96),rgba(18,59,93,.88)),url('assets/hero-bg.jpg') center/cover;position:relative;}
 .hero:after{content:"";position:absolute;inset:auto 0 0;height:6px;background:linear-gradient(90deg,var(--teal),var(--gold),var(--teal));}
 .hero-inner{position:relative;z-index:1;}
 .hero h1{letter-spacing:-.04em;}
@@ -711,6 +711,36 @@ footer { font-size: 0.9rem !important; }
   .step p, .why-item p, .why-card p, .business p, .service-card p { font-size: 1rem !important; }
 }
 </style>
+
+<style id="elkhoi-mobile-uniform-typography">
+@media (max-width: 640px) {
+  html { font-size: 16px !important; }
+  body,
+  body p,
+  body li,
+  body td,
+  body th,
+  body label,
+  body input,
+  body textarea,
+  body select,
+  body button,
+  body .form-group,
+  body .form-note,
+  body .note,
+  body .small,
+  body .description,
+  body .card-text,
+  body .service-description,
+  body .service-card p,
+  body .contact-info p,
+  body .policy-content p,
+  body .policy-content li {
+    font-size: 0.9rem !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <!-- ============ HEADER / NAVIGATION ============ -->
@@ -727,7 +757,7 @@ footer { font-size: 0.9rem !important; }
 <!-- Real Elkhoi logo file (has a dark charcoal background baked
            into the photo, not transparent — will show as a rectangle
            against the white nav bar until a transparent version exists) -->
-<img alt="Elkhoi Home &amp; Property Services" class="nav-logo-img" src="elkhoi-logo.png"/>
+<img alt="Elkhoi Home &amp; Property Services" class="nav-logo-img" src="assets/elkhoi-logo.png"/>
 </a>
 <ul class="nav-links" id="navLinks">
 <li><a href="#home">Home</a></li>
@@ -776,7 +806,7 @@ footer { font-size: 0.9rem !important; }
 <!-- SERVICE CARD 1: Elkhoi Cleaning -->
 <div class="service-card">
 <div class="service-icon">
-<img alt="Cleaning services icon" src="icon-cleaning.png"/>
+<img alt="Cleaning services icon" src="assets/icon-cleaning.png"/>
 </div>
 <h3>Elkhoi Cleaning</h3>
 <p class="service-desc">Professional cleaning for homes, offices and properties.</p>
@@ -798,7 +828,7 @@ footer { font-size: 0.9rem !important; }
 <!-- SERVICE CARD 2: Elkhoi Maintenance -->
 <div class="service-card">
 <div class="service-icon">
-<img alt="Maintenance services icon" src="icon-maintenance.png"/>
+<img alt="Maintenance services icon" src="assets/icon-maintenance.png"/>
 </div>
 <h3>Elkhoi Maintenance</h3>
 <p class="service-desc">Keeping your home or office functional and well-maintained.</p>
@@ -816,7 +846,7 @@ footer { font-size: 0.9rem !important; }
 <!-- SERVICE CARD 3: Elkhoi Property Management -->
 <div class="service-card">
 <div class="service-icon">
-<img alt="Property management services icon" src="icon-property.png"/>
+<img alt="Property management services icon" src="assets/icon-property.png"/>
 </div>
 <h3>Elkhoi Property Management</h3>
 <p class="service-desc">Property care and oversight to help owners keep properties checked, maintained and in good condition.</p>
@@ -855,43 +885,43 @@ footer { font-size: 0.9rem !important; }
 <div class="filmstrip-track">
 <!-- Copy 1 -->
 <div class="filmstrip-card">
-<img alt="Home and office maintenance work" src="work-maintenance.jpg"/>
+<img alt="Home and office maintenance work" src="assets/work-maintenance.jpg"/>
 <div class="filmstrip-card-overlay"></div>
 <div class="filmstrip-card-label"><span>Maintenance</span></div>
 </div>
 <div class="filmstrip-card">
-<img alt="Professional cleaning service" src="work-cleaning.jpg"/>
+<img alt="Professional cleaning service" src="assets/work-cleaning.jpg"/>
 <div class="filmstrip-card-overlay"></div>
 <div class="filmstrip-card-label"><span>Cleaning</span></div>
 </div>
 <div class="filmstrip-card">
-<img alt="Laundry pick-up and delivery" src="work-laundry.jpg"/>
+<img alt="Laundry pick-up and delivery" src="assets/work-laundry.jpg"/>
 <div class="filmstrip-card-overlay"></div>
 <div class="filmstrip-card-label"><span>Laundry</span></div>
 </div>
 <div class="filmstrip-card">
-<img alt="Property management" src="work-property.jpg"/>
+<img alt="Property management" src="assets/work-property.jpg"/>
 <div class="filmstrip-card-overlay"></div>
 <div class="filmstrip-card-label"><span>Property</span></div>
 </div>
 <!-- Copy 2 (identical — required for the seamless loop) -->
 <div class="filmstrip-card">
-<img alt="Home and office maintenance work" src="work-maintenance.jpg"/>
+<img alt="Home and office maintenance work" src="assets/work-maintenance.jpg"/>
 <div class="filmstrip-card-overlay"></div>
 <div class="filmstrip-card-label"><span>Maintenance</span></div>
 </div>
 <div class="filmstrip-card">
-<img alt="Professional cleaning service" src="work-cleaning.jpg"/>
+<img alt="Professional cleaning service" src="assets/work-cleaning.jpg"/>
 <div class="filmstrip-card-overlay"></div>
 <div class="filmstrip-card-label"><span>Cleaning</span></div>
 </div>
 <div class="filmstrip-card">
-<img alt="Laundry pick-up and delivery" src="work-laundry.jpg"/>
+<img alt="Laundry pick-up and delivery" src="assets/work-laundry.jpg"/>
 <div class="filmstrip-card-overlay"></div>
 <div class="filmstrip-card-label"><span>Laundry</span></div>
 </div>
 <div class="filmstrip-card">
-<img alt="Property management" src="work-property.jpg"/>
+<img alt="Property management" src="assets/work-property.jpg"/>
 <div class="filmstrip-card-overlay"></div>
 <div class="filmstrip-card-label"><span>Property</span></div>
 </div>
@@ -1171,7 +1201,7 @@ footer { font-size: 0.9rem !important; }
 <div>
 <div class="footer-logo">
 <div style="background:var(--white); border-radius:6px; padding:8px 14px; display:inline-block;">
-<img alt="Elkhoi Home &amp; Property Services" src="elkhoi-logo.png" style="height:44px; width:auto;"/>
+<img alt="Elkhoi Home &amp; Property Services" src="assets/elkhoi-logo.png" style="height:44px; width:auto;"/>
 </div>
 </div>
 <p style="max-width:320px; font-size:0.97rem; color:rgba(255,255,255,0.65);">
