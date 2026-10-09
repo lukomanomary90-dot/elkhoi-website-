@@ -112,6 +112,11 @@
 .contact-form input, .contact-form select, .contact-form textarea, .quote-form input, .quote-form select, .quote-form textarea, .form-group input, .form-group select, .form-group textarea { background:#FFFFFF !important; color:#24313A !important; border-color:#C9D8E1 !important; }
 .contact-form input::placeholder, .contact-form textarea::placeholder, .quote-form input::placeholder, .quote-form textarea::placeholder, .form-group input::placeholder, .form-group textarea::placeholder { color:#66737A !important; opacity:1; }
 .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus, .quote-form input:focus, .quote-form select:focus, .quote-form textarea:focus, .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline-color:#123B5D !important; border-color:#123B5D !important; }
+
+  /* Mobile typography: one step smaller, while preserving layout and desktop sizing. */
+  @media (max-width: 760px){
+    html{font-size:93.75%; -webkit-text-size-adjust:100%; text-size-adjust:100%;}
+  }
 </style>
 <style>/* Elkhoi form background trial */
 </style>
@@ -227,7 +232,7 @@ footer { font-size: 0.9rem !important; }
 <section style="padding-top:0;">
   <div class="quote-form-wrap">
     <div class="quote-form-card">
-      <form id="service-request-form" action="https://formspree.io/f/xjyvlggn" method="POST" enctype="multipart/form-data">
+      <form id="service-request-form" action="https://formspree.io/f/xjyvlggn" method="POST">
         <input type="hidden" name="_subject" value="New Elkhoi Service Request">
         <div class="form-row">
           <div class="form-group"><label for="g-name">Full Name</label><input type="text" id="g-name" name="name" required></div>
@@ -254,7 +259,7 @@ footer { font-size: 0.9rem !important; }
           <div class="form-group"><label for="g-time">Preferred Time <span class="optional">(Optional)</span></label><input type="time" id="g-time" name="preferred_time"></div>
         </div>
         <div class="form-group"><label for="g-requirements">Additional Requirements <span class="optional">(Optional)</span></label><textarea id="g-requirements" name="additional_requirements" placeholder="Tell us anything else that may help us understand the job."></textarea></div>
-        <div class="form-group"><label for="g-photo">Photo Upload <span class="optional">(Optional)</span></label><input type="file" id="g-photo" name="photo" accept="image/*"><p class="helper-text">A photo can help us understand the work required, but it is not necessary.</p></div>
+        <div class="form-group"><label>Photos <span class="optional">(Optional)</span></label><p class="helper-text">If you have photos that may help us understand the work required, please send them to us on WhatsApp after submitting your request.</p></div>
         <button type="submit" class="btn btn-primary btn-block">Request a Service</button>
         <p class="form-disclaimer">Submitting this form is a service request and does not automatically confirm your booking or final price.</p>
       </form>

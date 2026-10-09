@@ -658,6 +658,11 @@ footer{background:#061A2A;}
 .contact-form input, .contact-form select, .contact-form textarea, .quote-form input, .quote-form select, .quote-form textarea, .form-group input, .form-group select, .form-group textarea { background:#FFFFFF !important; color:#24313A !important; border-color:#C9D8E1 !important; }
 .contact-form input::placeholder, .contact-form textarea::placeholder, .quote-form input::placeholder, .quote-form textarea::placeholder, .form-group input::placeholder, .form-group textarea::placeholder { color:#66737A !important; opacity:1; }
 .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus, .quote-form input:focus, .quote-form select:focus, .quote-form textarea:focus, .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline-color:#123B5D !important; border-color:#123B5D !important; }
+
+  /* Mobile typography: one step smaller, while preserving layout and desktop sizing. */
+  @media (max-width: 760px){
+    html{font-size:93.75%; -webkit-text-size-adjust:100%; text-size-adjust:100%;}
+  }
 </style>
 <style>/* Elkhoi form background trial */
 </style>
@@ -712,6 +717,17 @@ footer { font-size: 0.9rem !important; }
 }
 </style>
 
+<style id="elkhoi-text-size-stability">
+/* Keep text sizing stable when navigating between sections on mobile browsers. */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+body {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+</style>
 <style id="elkhoi-mobile-uniform-typography">
 @media (max-width: 640px) {
   html { font-size: 16px !important; }
@@ -1042,7 +1058,7 @@ footer { font-size: 0.9rem !important; }
         (getform.io), then paste the endpoint URL they give you into
         the action="" attribute below.
       -->
-<form action="https://formspree.io/f/xjyvlggn" class="contact-form" enctype="multipart/form-data" id="home-service-request-form" method="POST">
+<form action="https://formspree.io/f/xjyvlggn" class="contact-form" id="home-service-request-form" method="POST">
 <input name="_subject" type="hidden" value="New Elkhoi Service Request"/>
 <div class="form-row">
 <div class="form-group"><label for="name">Full Name</label><input id="name" name="name" required="" type="text"/></div>
@@ -1116,7 +1132,7 @@ footer { font-size: 0.9rem !important; }
 <div class="form-group"><label for="time">Preferred Time <span style="font-weight:400; color:var(--ink-soft);">(Optional)</span></label><input id="time" name="preferred_time" type="time"/></div>
 </div>
 <div class="form-group"><label for="message">Additional Requirements <span style="font-weight:400; color:var(--ink-soft);">(Optional)</span></label><textarea id="message" name="message" placeholder="Tell us anything else that may help us understand the job."></textarea></div>
-<div class="form-group"><label for="photo">Photo Upload <span style="font-weight:400; color:var(--ink-soft);">(Optional)</span></label><input accept="image/*" id="photo" name="photo" type="file"/><p style="font-size:0.87rem;color:var(--ink-soft);margin-top:2px;">A photo can help us understand the work required, but it is not necessary.</p></div>
+<div class="form-group"><label>Photos <span style="font-weight:400; color:var(--ink-soft);">(Optional)</span></label><p style="font-size:0.87rem;color:var(--ink-soft);margin-top:2px;">If you have photos that may help us understand the work required, please send them to us on WhatsApp after submitting your request.</p></div>
 <button class="btn btn-primary btn-block" type="submit">Request a Service</button>
 <p style="font-size:0.87rem; color:var(--ink-soft); text-align:center; margin-top:10px;">Submitting this form is a service request and does not automatically confirm your booking or final price.</p>
 </form>
